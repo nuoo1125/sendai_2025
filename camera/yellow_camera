@@ -1,0 +1,24 @@
+import sensor, image, lcd, time
+
+lcd.init()
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.skip_frames(time=2000)
+sensor.set_auto_gain(False)
+sensor.set_auto_whitebal(False)
+sensor.set_vflip(True)
+sensor.set_hmirror(True)
+
+yellow_threshold = (50, 90, -10, 10, 40, 80)
+while True:
+    img = sensor.snapshot()
+    blobs = img.find_blobs([yellow_threshold],pixels__threshold=100,area_threshold = 100,merge=True)
+    if blobs:
+        for blob in blobs:
+            img.draw_rectangle(blob.rect(),color=(255,0,0))
+            print(blob.cx())
+            print(blob.cy())
+    else:
+        print("NO BALL")
+    lcd.display(img)
