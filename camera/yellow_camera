@@ -1,5 +1,5 @@
 import sensor, image, lcd, time
-#設定
+
 lcd.init()
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)
