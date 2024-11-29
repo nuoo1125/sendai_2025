@@ -12,7 +12,7 @@ lcd.init()
 sensor.skip_frames(time=2000)
 
 
-blue_threshold = (20, 100, -26, 127, 26, 127)
+blue_threshold = (0, 100, -86, 22, -8, 24)
 
 while True:
     img = sensor.snapshot()
@@ -20,7 +20,7 @@ while True:
     
     for blob in blobs: 
         if 0.8 < blob.w()/blob.h()<1.2:
-            img.draw_circle(blob.cx(),blob.cy(),blob.w()//2,color=(255,0,0))
+            img.draw_circle(blob.cx(),blob.cy(),blob.w()//2,color=(0,0,255))
             print(blob.cx())
     else:
         img.draw_string(10, 10, "No Ball Found", color=(255, 0, 0), scale=2)
