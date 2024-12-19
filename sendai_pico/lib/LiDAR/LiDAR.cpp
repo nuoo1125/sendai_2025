@@ -1,5 +1,4 @@
 #include "LiDAR.h"
-#include "servo.h"
 
 bool Pico_LiDAR::init(uint8_t pin, i2c_inst_t *i2c) {
     if (!sensor.begin(VL53L0X_I2C_ADDR, i2c,  
