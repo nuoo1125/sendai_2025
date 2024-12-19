@@ -23,7 +23,7 @@ int main() {
 
     // Start continuous back-to-back mode (take readings as fast as possible)
     sensor.startContinuous();
-
-
-    printf("millimeters: %d", sensor.readRangeContinuousMillimeters());
+    while(1){
+        printf("millimeters: %d", sensor.readRangeContinuousMillimeters());
+    }
 }
