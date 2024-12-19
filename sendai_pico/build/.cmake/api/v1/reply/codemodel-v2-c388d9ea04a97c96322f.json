@@ -10,7 +10,7 @@
 					[
 						1,
 						81,
-						83
+						84
 					],
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
@@ -785,8 +785,8 @@
 					"source" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/tinyusb",
 					"targetIndexes" : 
 					[
-						6,
-						7
+						7,
+						8
 					]
 				},
 				{
@@ -1019,7 +1019,8 @@
 					"build" : "lib",
 					"childIndexes" : 
 					[
-						82
+						82,
+						83
 					],
 					"jsonFile" : "directory-lib-Debug-e9069484d90298468a11.json",
 					"minimumCMakeVersion" : 
@@ -1042,7 +1043,22 @@
 					"source" : "lib/stepper",
 					"targetIndexes" : 
 					[
-						5
+						6
+					]
+				},
+				{
+					"build" : "lib/gyro",
+					"jsonFile" : "directory-lib.gyro-Debug-61ea239d63d53e2120b9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 81,
+					"projectIndex" : 0,
+					"source" : "lib/gyro",
+					"targetIndexes" : 
+					[
+						4
 					]
 				},
 				{
@@ -1057,7 +1073,7 @@
 					"source" : "main",
 					"targetIndexes" : 
 					[
-						4
+						5
 					]
 				}
 			],
@@ -1074,13 +1090,15 @@
 						0,
 						81,
 						82,
-						83
+						83,
+						84
 					],
 					"name" : "pico_test",
 					"targetIndexes" : 
 					[
 						4,
-						5
+						5,
+						6
 					]
 				},
 				{
@@ -1175,8 +1193,8 @@
 						1,
 						2,
 						3,
-						6,
-						7
+						7,
+						8
 					]
 				}
 			],
@@ -1212,8 +1230,15 @@
 				},
 				{
 					"directoryIndex" : 83,
+					"id" : "gyro::@4f3daca01e02391b6896",
+					"jsonFile" : "target-gyro-Debug-bfb93939ac9ea86d1154.json",
+					"name" : "gyro",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 84,
 					"id" : "sendai_pico::@15c4a824ab2728a3f5e7",
-					"jsonFile" : "target-sendai_pico-Debug-ecb810d8f71d3f6e194b.json",
+					"jsonFile" : "target-sendai_pico-Debug-62f6d1878d0f384b9891.json",
 					"name" : "sendai_pico",
 					"projectIndex" : 0
 				},

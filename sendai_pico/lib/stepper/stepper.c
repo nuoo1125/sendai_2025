@@ -2,6 +2,7 @@
 #include "stepper.h"
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
+#include "hardware/i2c.h"
 
 void stepper_setup(){
     gpio_set_function(clock_l,GPIO_FUNC_PWM);

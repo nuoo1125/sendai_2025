@@ -40,6 +40,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/stepper/cmake_install.cmake")
+  include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/gyro/cmake_install.cmake")
 
 endif()
 

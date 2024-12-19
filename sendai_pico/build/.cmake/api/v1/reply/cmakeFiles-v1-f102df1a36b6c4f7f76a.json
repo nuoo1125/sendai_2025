@@ -629,6 +629,9 @@
 			"path" : "lib/stepper/CMakeLists.txt"
 		},
 		{
+			"path" : "lib/gyro/CMakeLIsts.txt"
+		},
+		{
 			"path" : "main/CMakeLists.txt"
 		},
 		{
