@@ -1,0 +1,2 @@
+add_library(VL53L0X VL53L0X.cpp)
+target_link_libraries(VL53L0X pico_stdlib hardware_i2c hardware_pwm hardware_adc hardware_spi)
