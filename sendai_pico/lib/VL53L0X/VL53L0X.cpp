@@ -498,6 +498,7 @@ bool VL53L0X::setMeasurementTimingBudget(uint32_t budget_us)
 // Get the measurement timing budget in microseconds
 // based on VL53L0X_get_measurement_timing_budget_micro_seconds()
 // in us
+
 uint32_t VL53L0X::getMeasurementTimingBudget()
 {
     SequenceStepEnables enables;
@@ -552,6 +553,7 @@ uint32_t VL53L0X::getMeasurementTimingBudget()
 //  pre:  12 to 18 (initialized default: 14)
 //  final: 8 to 14 (initialized default: 10)
 // based on VL53L0X_set_vcsel_pulse_period()
+
 bool VL53L0X::setVcselPulsePeriod(vcselPeriodType type, uint8_t period_pclks)
 {
     uint8_t vcsel_period_reg = encodeVcselPeriod(period_pclks);
@@ -750,6 +752,7 @@ uint8_t VL53L0X::getVcselPulsePeriod(vcselPeriodType type)
 // inter-measurement period in milliseconds determining how often the sensor
 // takes a measurement.
 // based on VL53L0X_StartMeasurement()
+
 void VL53L0X::startContinuous(uint32_t period_ms)
 {
     writeReg(0x80, 0x01);
