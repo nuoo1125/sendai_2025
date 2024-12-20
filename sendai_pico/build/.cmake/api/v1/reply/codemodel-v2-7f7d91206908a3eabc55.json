@@ -10,7 +10,7 @@
 					[
 						1,
 						81,
-						85
+						86
 					],
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
@@ -785,8 +785,8 @@
 					"source" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/tinyusb",
 					"targetIndexes" : 
 					[
-						8,
-						9
+						9,
+						10
 					]
 				},
 				{
@@ -1021,7 +1021,8 @@
 					[
 						82,
 						83,
-						84
+						84,
+						85
 					],
 					"jsonFile" : "directory-lib-Debug-e9069484d90298468a11.json",
 					"minimumCMakeVersion" : 
@@ -1044,7 +1045,7 @@
 					"source" : "lib/stepper",
 					"targetIndexes" : 
 					[
-						7
+						8
 					]
 				},
 				{
@@ -1078,6 +1079,21 @@
 					]
 				},
 				{
+					"build" : "lib/mcp3208",
+					"jsonFile" : "directory-lib.mcp3208-Debug-c7f85953e9e8a7d4479c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 81,
+					"projectIndex" : 0,
+					"source" : "lib/mcp3208",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
 					"build" : "main",
 					"jsonFile" : "directory-main-Debug-72090c4a4cf973f97e42.json",
 					"minimumCMakeVersion" : 
@@ -1089,7 +1105,7 @@
 					"source" : "main",
 					"targetIndexes" : 
 					[
-						6
+						7
 					]
 				}
 			],
@@ -1108,7 +1124,8 @@
 						82,
 						83,
 						84,
-						85
+						85,
+						86
 					],
 					"name" : "pico_test",
 					"targetIndexes" : 
@@ -1116,7 +1133,8 @@
 						0,
 						5,
 						6,
-						7
+						7,
+						8
 					]
 				},
 				{
@@ -1211,8 +1229,8 @@
 						2,
 						3,
 						4,
-						8,
-						9
+						9,
+						10
 					]
 				}
 			],
@@ -1262,6 +1280,13 @@
 				},
 				{
 					"directoryIndex" : 85,
+					"id" : "mcp3208::@3a14ae9c07c56a8f1dd5",
+					"jsonFile" : "target-mcp3208-Debug-0dbacfddffa9c3816622.json",
+					"name" : "mcp3208",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 86,
 					"id" : "sendai_pico::@15c4a824ab2728a3f5e7",
 					"jsonFile" : "target-sendai_pico-Debug-8a19b134266d2180df72.json",
 					"name" : "sendai_pico",

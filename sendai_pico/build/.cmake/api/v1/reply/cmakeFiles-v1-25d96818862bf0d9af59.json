@@ -635,6 +635,9 @@
 			"path" : "lib/VL53L0X/CMakeLists.txt"
 		},
 		{
+			"path" : "lib/mcp3208/CMakeLists.txt"
+		},
+		{
 			"path" : "main/CMakeLists.txt"
 		},
 		{
