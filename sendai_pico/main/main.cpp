@@ -7,24 +7,23 @@
 #define I2C_SDA 16
 #define I2C_SCL 17
 
+void sg90(int angle){
+    gpio_set_function(0,GPIO_FUNC_PWM);
+    uint32_t pwm_slice_num = pwm_gpio_to_slice_num(0);
+    pwm_set_wrap(pwm_slice_num,25000);
+    pwm_set_clkdiv(pwm_slice_num,64.0f);
+    float duty_cycle = 0.5 + (angle * 2.0 / 180.0); 
+    uint16_t level = (uint16_t)(duty_cycle * 25000.0 / 20.0); 
+    pwm_set_chan_level(pwm_slice_num, pwm_gpio_to_channel(0), level);
+    pwm_set_enabled(pwm_slice_num,true);
+}
 int main() {
     stdio_init_all();
-    // Initialize I2C0 at 400kHz
-    i2c_init(i2c0, 100 * 1000);
-    gpio_set_function(I2C_SDA, GPIO_FUNC_I2C);
-    gpio_set_function(I2C_SCL, GPIO_FUNC_I2C);
-    gpio_pull_up(I2C_SDA);
-    gpio_pull_up(I2C_SCL);
-
-    // Initialize VL53L0X sensor
-    VL53L0X sensor;
-    sensor.init();
-    sensor.setTimeout(500);
-
-    // Start continuous back-to-back mode (take readings as fast as possible)
-    sensor.startContinuous();
     while(1){
-        printf("millimeters: %d\n", sensor.readRangeContinuousMillimeters());
-        sleep_ms(50);
+        sg90(50);
+        sleep_ms(1000);
+        sg90(180);
+        sleep_ms(1000);
     }
 }
+
