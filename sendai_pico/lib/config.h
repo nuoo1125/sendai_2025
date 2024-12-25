@@ -12,6 +12,7 @@
 #define direction_r 19 
 #define sleep 20
 #define reset 21 
+#define step_angle 0.9
 //tof系
 #define VL53L0X_DEFAULT_ADDRESS 0x29
 //mcp3208系
@@ -19,6 +20,4 @@
 #define SPI_PIN_MOSI 3
 #define SPI_PIN_MISO 4
 #define SPI_PIN_CS   5
-
 #define SPI_PORT spi0
-

@@ -1306,7 +1306,7 @@
 				{
 					"directoryIndex" : 87,
 					"id" : "sendai_pico::@15c4a824ab2728a3f5e7",
-					"jsonFile" : "target-sendai_pico-Debug-56b7a60f7f4c47d6dd6c.json",
+					"jsonFile" : "target-sendai_pico-Debug-6428e1b897a2ce9388cf.json",
 					"name" : "sendai_pico",
 					"projectIndex" : 0
 				},
@@ -1320,7 +1320,7 @@
 				{
 					"directoryIndex" : 82,
 					"id" : "stepper::@20ad3cf409baec8a04a7",
-					"jsonFile" : "target-stepper-Debug-a586709df1451ac9aded.json",
+					"jsonFile" : "target-stepper-Debug-a4689dff33fdf9064051.json",
 					"name" : "stepper",
 					"projectIndex" : 0
 				},

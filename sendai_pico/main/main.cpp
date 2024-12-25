@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include "gyro/gyro.h"
 #include "VL53L0X/VL53L0X.h"
-
-#define I2C_SDA 16
-#define I2C_SCL 17
+#include "servo/servo.h"
+#include "mcp3208/mcp3208.h"
+#include "stepper/stepper.h"
 
 int main() {
     stdio_init_all();

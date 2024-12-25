@@ -14,7 +14,8 @@
 			"add_library",
 			"add_dependencies",
 			"pico_define_boot_stage2",
-			"target_link_libraries"
+			"target_link_libraries",
+			"target_include_directories"
 		],
 		"files" : 
 		[
@@ -51,6 +52,12 @@
 				"command" : 3,
 				"file" : 0,
 				"line" : 2,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 3,
 				"parent" : 0
 			}
 		]
@@ -224,6 +231,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/touma/sendai_2025/sendai_pico/lib/stepper/../gyro"
+				},
 				{
 					"backtrace" : 5,
 					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/common/pico_stdlib/include"
@@ -608,6 +619,10 @@
 			"includes" : 
 			[
 				{
+					"backtrace" : 6,
+					"path" : "C:/Users/touma/sendai_2025/sendai_pico/lib/stepper/../gyro"
+				},
+				{
 					"backtrace" : 5,
 					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/common/pico_stdlib/include"
 				},
@@ -975,6 +990,10 @@
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 6,
+					"path" : "C:/Users/touma/sendai_2025/sendai_pico/lib/stepper/../gyro"
+				},
 				{
 					"backtrace" : 5,
 					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/common/pico_stdlib/include"

@@ -12,12 +12,9 @@
 extern "C" {
 #endif
 void stepper_setup();
-void stepper_fast(bool forward_l,bool forward_r);
 void stepper_slow(bool forward_l,bool forward_r);
-void stepper_angle(int16_t angle_l,int16_t angle_r);
-void stepper_right();
-void stepper_left();
-void stepper_turn();
+void stepper_angle(int steps,bool right);
+void move_to_stepper(int target_angle);
 void stepper_break();
 #ifdef __cplusplus
 }
