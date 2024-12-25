@@ -14,3 +14,11 @@
 #define reset 21 
 //tof系
 #define VL53L0X_DEFAULT_ADDRESS 0x29
+//mcp3208系
+#define SPI_PIN_SCK  2
+#define SPI_PIN_MOSI 3
+#define SPI_PIN_MISO 4
+#define SPI_PIN_CS   5
+
+#define SPI_PORT spi0
+

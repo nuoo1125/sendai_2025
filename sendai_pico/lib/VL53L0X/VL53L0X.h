@@ -6,11 +6,10 @@
 #include <iostream>
 #include "pico/time.h"
 #include "hardware/i2c.h"
-
+#include "../config.h"
 #include <string.h> // Include for memcpy
 
 // Default I2C address for VL53L0X
-#define VL53L0X_DEFAULT_ADDRESS 0x29
 
 class VL53L0X
 {

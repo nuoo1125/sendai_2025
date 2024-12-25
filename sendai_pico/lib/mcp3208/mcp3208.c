@@ -2,12 +2,6 @@
 #include "hardware/spi.h"
 #include "mcp3208.h"
 
-#define SPI_PIN_SCK  2
-#define SPI_PIN_MOSI 3
-#define SPI_PIN_MISO 4
-#define SPI_PIN_CS   5
-
-#define SPI_PORT spi0
 
 void mcp3x08_init(){
     spi_init(SPI_PORT, 1000 * 1000);
@@ -31,11 +25,4 @@ uint16_t mcp3208_read(uint8_t ch){
     gpio_put(SPI_PIN_CS,1);
 
     return (buf[1] & 0b00001111) << 8 | buf[2];
-}
-void cds_init(){
-    gpio_init(green_led);
-    gpio_set_dir(green_led,GPIO_OUT);
-    gpio_init(red_led);
-    gpio_set_dir(red_led,GPIO_OUT);
-    mcp3x08_init();
 }
