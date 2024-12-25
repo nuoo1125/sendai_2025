@@ -6,12 +6,7 @@
 #include "hardware/i2c.h"
 #include "hardware/spi.h"
 
-#define clock_l 16
-#define direction_l  17
-#define clock_r 18
-#define direction_r 19 
-#define sleep 20
-#define reset 21 
+
 
 #ifdef __cplusplus
 extern "C" {

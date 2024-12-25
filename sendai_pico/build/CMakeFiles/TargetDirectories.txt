@@ -180,6 +180,9 @@ C:/Users/touma/sendai_2025/sendai_pico/build/lib/VL53L0X/CMakeFiles/rebuild_cach
 C:/Users/touma/sendai_2025/sendai_pico/build/lib/mcp3208/CMakeFiles/mcp3208.dir
 C:/Users/touma/sendai_2025/sendai_pico/build/lib/mcp3208/CMakeFiles/edit_cache.dir
 C:/Users/touma/sendai_2025/sendai_pico/build/lib/mcp3208/CMakeFiles/rebuild_cache.dir
+C:/Users/touma/sendai_2025/sendai_pico/build/lib/servo/CMakeFiles/servo.dir
+C:/Users/touma/sendai_2025/sendai_pico/build/lib/servo/CMakeFiles/edit_cache.dir
+C:/Users/touma/sendai_2025/sendai_pico/build/lib/servo/CMakeFiles/rebuild_cache.dir
 C:/Users/touma/sendai_2025/sendai_pico/build/main/CMakeFiles/sendai_pico.dir
 C:/Users/touma/sendai_2025/sendai_pico/build/main/CMakeFiles/edit_cache.dir
 C:/Users/touma/sendai_2025/sendai_pico/build/main/CMakeFiles/rebuild_cache.dir

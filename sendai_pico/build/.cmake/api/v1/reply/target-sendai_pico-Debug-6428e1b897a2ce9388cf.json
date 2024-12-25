@@ -1395,6 +1395,10 @@
 		{
 			"backtrace" : 2,
 			"id" : "VL53L0X::@4813714801c8fe0176ef"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "servo::@71a01095c50c0656dc8f"
 		}
 	],
 	"id" : "sendai_pico::@15c4a824ab2728a3f5e7",
@@ -2238,6 +2242,11 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "lib\\VL53L0X\\libVL53L0X.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "lib\\servo\\libservo.a",
 				"role" : "libraries"
 			},
 			{

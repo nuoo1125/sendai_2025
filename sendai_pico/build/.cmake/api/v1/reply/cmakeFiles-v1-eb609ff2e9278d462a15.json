@@ -638,6 +638,9 @@
 			"path" : "lib/mcp3208/CMakeLists.txt"
 		},
 		{
+			"path" : "lib/servo/CMakeLIsts.txt"
+		},
+		{
 			"path" : "main/CMakeLists.txt"
 		},
 		{

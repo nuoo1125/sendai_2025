@@ -10,7 +10,7 @@
 					[
 						1,
 						81,
-						86
+						87
 					],
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
@@ -785,8 +785,8 @@
 					"source" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/tinyusb",
 					"targetIndexes" : 
 					[
-						9,
-						10
+						10,
+						11
 					]
 				},
 				{
@@ -1022,7 +1022,8 @@
 						82,
 						83,
 						84,
-						85
+						85,
+						86
 					],
 					"jsonFile" : "directory-lib-Debug-e9069484d90298468a11.json",
 					"minimumCMakeVersion" : 
@@ -1045,7 +1046,7 @@
 					"source" : "lib/stepper",
 					"targetIndexes" : 
 					[
-						8
+						9
 					]
 				},
 				{
@@ -1094,6 +1095,21 @@
 					]
 				},
 				{
+					"build" : "lib/servo",
+					"jsonFile" : "directory-lib.servo-Debug-cadb7f4fa1b891bd9aa5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 81,
+					"projectIndex" : 0,
+					"source" : "lib/servo",
+					"targetIndexes" : 
+					[
+						8
+					]
+				},
+				{
 					"build" : "main",
 					"jsonFile" : "directory-main-Debug-72090c4a4cf973f97e42.json",
 					"minimumCMakeVersion" : 
@@ -1125,7 +1141,8 @@
 						83,
 						84,
 						85,
-						86
+						86,
+						87
 					],
 					"name" : "pico_test",
 					"targetIndexes" : 
@@ -1134,7 +1151,8 @@
 						5,
 						6,
 						7,
-						8
+						8,
+						9
 					]
 				},
 				{
@@ -1229,8 +1247,8 @@
 						2,
 						3,
 						4,
-						9,
-						10
+						10,
+						11
 					]
 				}
 			],
@@ -1286,10 +1304,17 @@
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 86,
+					"directoryIndex" : 87,
 					"id" : "sendai_pico::@15c4a824ab2728a3f5e7",
-					"jsonFile" : "target-sendai_pico-Debug-8a19b134266d2180df72.json",
+					"jsonFile" : "target-sendai_pico-Debug-6428e1b897a2ce9388cf.json",
 					"name" : "sendai_pico",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 86,
+					"id" : "servo::@71a01095c50c0656dc8f",
+					"jsonFile" : "target-servo-Debug-667412b5233aecc5afdc.json",
+					"name" : "servo",
 					"projectIndex" : 0
 				},
 				{

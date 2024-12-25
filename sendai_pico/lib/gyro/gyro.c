@@ -3,13 +3,6 @@
 #include "hardware/i2c.h"
 #include <stdio.h>
 
-#define I2C_PORT i2c0
-#define SDA_PIN 16
-#define SCL_PIN 17
-#define ADDRESS 0x28
-#define EULER_REGISTER 0x1A
-
-// 16ビットのデータをマージする関数
 int16_t merge(uint8_t low, uint8_t high) {
     int16_t result = (high << 8) | low;
     if (result > 32767) {
@@ -17,8 +10,6 @@ int16_t merge(uint8_t low, uint8_t high) {
     }
     return result;
 }
-
-// I2Cの初期化
 void i2c_init_custom() {
     i2c_init(I2C_PORT, 100000); // 100 kHzのI2C通信
     gpio_set_function(SDA_PIN, GPIO_FUNC_I2C);
@@ -27,7 +18,6 @@ void i2c_init_custom() {
     gpio_pull_up(SCL_PIN);
 }
 
-// 初期化関数
 void init_bno055() {
     uint8_t chip_id;
     
@@ -73,4 +63,7 @@ void read_euler_angles(int16_t* yaw, int16_t* roll, int16_t* pitch) {
     *yaw = merge(buffer[0], buffer[1]);
     *roll = merge(buffer[2], buffer[3]);
     *pitch = merge(buffer[4], buffer[5]);
+    *yaw = *yaw/16;
+    *roll = *roll/16;
+    *pitch = *pitch/16;
 }

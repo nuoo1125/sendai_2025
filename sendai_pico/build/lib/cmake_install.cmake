@@ -43,6 +43,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/gyro/cmake_install.cmake")
   include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/VL53L0X/cmake_install.cmake")
   include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/mcp3208/cmake_install.cmake")
+  include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/servo/cmake_install.cmake")
 
 endif()
 
