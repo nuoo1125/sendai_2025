@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "stepper.h"
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
@@ -24,7 +25,7 @@ void stepper_slow(bool forward_l,bool forward_r){
         gpio_put(direction_r,1);        
     }
     else if(forward_l == 0 && forward_r == 1){
-        gpio_put(direction_l,0);
+        gpio_put(direction_l,1);
         gpio_put(direction_r,0);        
     }
     else if(forward_l == 0 && forward_r == 0){
@@ -37,14 +38,14 @@ void stepper_slow(bool forward_l,bool forward_r){
     }
     uint slice_num_l = pwm_gpio_to_slice_num(clock_l);
     uint chan_l = pwm_gpio_to_channel(clock_l);
-    pwm_set_clkdiv(slice_num_l, 1000);
-    pwm_set_wrap(slice_num_l, 2500);
-    pwm_set_chan_level(slice_num_l, chan_l, 1000);
+    pwm_set_clkdiv(slice_num_l, 124);
+    pwm_set_wrap(slice_num_l, 2047);
+    pwm_set_chan_level(slice_num_l, chan_l, 1024);
     uint slice_num_r = pwm_gpio_to_slice_num(clock_r);
     uint chan_r = pwm_gpio_to_channel(clock_r);
-    pwm_set_clkdiv(slice_num_r, 1000);
-    pwm_set_wrap(slice_num_r, 2500);
-    pwm_set_chan_level(slice_num_r, chan_r, 1000);
+    pwm_set_clkdiv(slice_num_r, 124);
+    pwm_set_wrap(slice_num_r, 2047);
+    pwm_set_chan_level(slice_num_r, chan_r, 1024);
     pwm_set_enabled(slice_num_l, true);
     pwm_set_enabled(slice_num_r, true);
 }
@@ -54,16 +55,35 @@ void stepper_break(){
     pwm_set_enabled(slice_num_l,false);
     pwm_set_enabled(slice_num_r, false);
 }
+void stepper_angle(int steps,bool right){
+    if(right){
+        gpio_put(direction_l,1);
+        gpio_put(direction_r,1);
+    }
+    else{
+        gpio_put(direction_l,0);
+        gpio_put(direction_r,0);
+    }
+    uint slice_num_r = pwm_gpio_to_slice_num(clock_r);
+    uint slice_num_l = pwm_gpio_to_slice_num(clock_l);
+    pwm_set_enabled(slice_num_l,true);
+    pwm_set_enabled(slice_num_r,true);
+    sleep_ms(steps);
+    pwm_set_enabled(slice_num_l,false);
+    pwm_set_enabled(slice_num_r, false);
+}
 void move_to_stepper(int target_angle){
     int16_t yaw,roll,pitch;
     read_euler_angles(&yaw,&roll,&pitch);
-    int16_t current_angle = yaw;
-    while(current_angle != target_angle){
+    int16_t current_angle = yaw/16.0;
+    printf("%.2f\n",current_angle);
+    while((target_angle-10 > current_angle)||(target_angle+10<current_angle)){
         int16_t angle_diff = target_angle - current_angle;
         bool right = angle_diff > 0;
         int steps = abs(angle_diff)/step_angle;
         stepper_angle(steps,right);
         read_euler_angles(&yaw,&roll,&pitch);
-        current_angle = yaw;
+        int16_t current_angle = yaw/16.0;
+        printf("%.2f\n",current_angle);
     }
 }

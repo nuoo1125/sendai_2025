@@ -1,8 +1,8 @@
 #pragma once
 //gyro系
 #define I2C_PORT i2c0
-#define SDA_PIN 16
-#define SCL_PIN 17
+#define SDA_PIN 0
+#define SCL_PIN 1
 #define ADDRESS 0x28
 #define EULER_REGISTER 0x1A
 //stepper系

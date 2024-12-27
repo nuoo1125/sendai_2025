@@ -63,7 +63,4 @@ void read_euler_angles(int16_t* yaw, int16_t* roll, int16_t* pitch) {
     *yaw = merge(buffer[0], buffer[1]);
     *roll = merge(buffer[2], buffer[3]);
     *pitch = merge(buffer[4], buffer[5]);
-    *yaw = *yaw/16;
-    *roll = *roll/16;
-    *pitch = *pitch/16;
 }
