@@ -4,7 +4,7 @@ import sensor, image, lcd
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QVGA)
-sensor.set_auto_gain(False)  
+#sensor.set_auto_gain(False)  
 sensor.set_auto_whitebal(False)  
 sensor.set_vflip(True)  
 sensor.set_hmirror(True)  
