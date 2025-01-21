@@ -49,6 +49,7 @@ void init_bno055() {
         i2c_write_blocking(I2C_PORT, ADDRESS, data, 2, false); // レジスタへ書き込み
         sleep_ms(delay); // 指定された待機時間
     }
+    printf("%d\n",1234);
 }
 
 // Euler角のデータを取得する関数

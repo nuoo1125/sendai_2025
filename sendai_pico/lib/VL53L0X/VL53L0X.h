@@ -108,7 +108,7 @@ public:
 
     uint8_t last_status; // status of last I2C transmission
 
-    VL53L0X(i2c_inst_t *i2cPort = i2c0, uint8_t address = VL53L0X_DEFAULT_ADDRESS);
+    VL53L0X(i2c_inst_t *i2cPort = i2c1, uint8_t address = VL53L0X_DEFAULT_ADDRESS);
 
     void setAddress(uint8_t new_addr);
     uint8_t getAddress();

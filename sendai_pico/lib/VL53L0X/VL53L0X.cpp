@@ -829,6 +829,7 @@ uint16_t VL53L0X::readRangeContinuousMillimeters()
 // Performs a single-shot range measurement and returns the reading in
 // millimeters
 // based on VL53L0X_PerformSingleRangingMeasurement()
+
 uint16_t VL53L0X::readRangeSingleMillimeters()
 {
     writeReg(0x80, 0x01);
@@ -1015,6 +1016,7 @@ uint32_t VL53L0X::timeoutMicrosecondsToMclks(uint32_t timeout_period_us, uint8_t
 }
 
 // based on VL53L0X_perform_single_ref_calibration()
+
 bool VL53L0X::performSingleRefCalibration(uint8_t vhv_init_byte)
 {
     writeReg(SYSRANGE_START, 0x01 | vhv_init_byte); // VL53L0X_REG_SYSRANGE_MODE_START_STOP

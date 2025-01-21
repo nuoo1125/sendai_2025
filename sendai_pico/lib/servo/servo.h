@@ -2,11 +2,12 @@
 
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
+#include "../config.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-void set_pwm(int gpio);
+void sg90_angle(float angle);
 #ifdef __cplusplus
 }
 #endif
