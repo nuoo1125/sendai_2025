@@ -4,7 +4,7 @@
 // VL53L0X datasheet.
 
 #include "VL53L0X.h"
-
+#include "../config.h"
 // Record the current time to check an upcoming timeout against
 void VL53L0X::startTimeout()
 {

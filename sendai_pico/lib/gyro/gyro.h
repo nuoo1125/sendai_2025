@@ -13,7 +13,6 @@
 extern "C" {
 #endif
 int16_t merge(uint8_t low, uint8_t high);
-void i2c_init_custom();
 void init_bno055();
 void read_euler_angles(int16_t* yaw, int16_t* roll, int16_t* pitch);
 #ifdef __cplusplus

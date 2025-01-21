@@ -1,6 +1,7 @@
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
 #include "mcp3208.h"
+#include "../config.h"
 
 
 void mcp3x08_init(){
@@ -25,4 +26,9 @@ uint16_t mcp3208_read(uint8_t ch){
     gpio_put(SPI_PIN_CS,1);
 
     return (buf[1] & 0b00001111) << 8 | buf[2];
+}
+void read_photo(int *photo){
+    for(int i=0;i<3;i++){
+        photo[i] = mcp3208_read(i);
+    }
 }
