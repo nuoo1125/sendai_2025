@@ -43,9 +43,9 @@ static inline pio_sm_config ws2812_program_get_default_config(uint offset) {
 }
 
 #include "hardware/clocks.h"
-static inline void ws2812_program_init(PIO pio, uint sm, uint offset, uint pin, float freq, bool rgbw) {
-    pio_gpio_init(pio, pin);
-    pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, true);
+static inline void ws2812_program_init( uint sm, uint offset, uint pin, float freq, bool rgbw) {
+    pio_gpio_init(pio0, pin);
+    pio_sm_set_consecutive_pindirs(pio0, sm, pin, 1, true);
     pio_sm_config c = ws2812_program_get_default_config(offset);
     sm_config_set_sideset_pins(&c, pin);
     sm_config_set_out_shift(&c, false, true, rgbw ? 32 : 24);
@@ -53,8 +53,8 @@ static inline void ws2812_program_init(PIO pio, uint sm, uint offset, uint pin, 
     int cycles_per_bit = ws2812_T1 + ws2812_T2 + ws2812_T3;
     float div = clock_get_hz(clk_sys) / (freq * cycles_per_bit);
     sm_config_set_clkdiv(&c, div);
-    pio_sm_init(pio, sm, offset, &c);
-    pio_sm_set_enabled(pio, sm, true);
+    pio_sm_init(pio0, sm, offset, &c);
+    pio_sm_set_enabled(pio0, sm, true);
 }
 
 #endif
@@ -93,11 +93,11 @@ static inline pio_sm_config ws2812_parallel_program_get_default_config(uint offs
 }
 
 #include "hardware/clocks.h"
-static inline void ws2812_parallel_program_init(PIO pio, uint sm, uint offset, uint pin_base, uint pin_count, float freq) {
+static inline void ws2812_parallel_program_init(uint sm, uint offset, uint pin_base, uint pin_count, float freq) {
     for(uint i=pin_base; i<pin_base+pin_count; i++) {
-        pio_gpio_init(pio, i);
+        pio_gpio_init(pio0, i);
     }
-    pio_sm_set_consecutive_pindirs(pio, sm, pin_base, pin_count, true);
+    pio_sm_set_consecutive_pindirs(pio0, sm, pin_base, pin_count, true);
     pio_sm_config c = ws2812_parallel_program_get_default_config(offset);
     sm_config_set_out_shift(&c, true, true, 32);
     sm_config_set_out_pins(&c, pin_base, pin_count);
@@ -106,14 +106,17 @@ static inline void ws2812_parallel_program_init(PIO pio, uint sm, uint offset, u
     int cycles_per_bit = ws2812_parallel_T1 + ws2812_parallel_T2 + ws2812_parallel_T3;
     float div = clock_get_hz(clk_sys) / (freq * cycles_per_bit);
     sm_config_set_clkdiv(&c, div);
-    pio_sm_init(pio, sm, offset, &c);
-    pio_sm_set_enabled(pio, sm, true);
+    pio_sm_init(pio0, sm, offset, &c);
+    pio_sm_set_enabled(pio0, sm, true);
 }
-void set_pixel_color(PIO pio, uint sm, uint8_t red, uint8_t green, uint8_t blue) {
+
+#define WS2812_PIN 13
+#define IS_RGBW false
+
+void set_pixel_color(uint sm, uint8_t red, uint8_t green, uint8_t blue) {
     uint32_t color = (green << 24) | (red << 16) | (blue << 8);
-    pio_sm_put_blocking(pio, sm, color);
+    pio_sm_put_blocking(pio0, sm, color);
 }
 
 
 #endif
-

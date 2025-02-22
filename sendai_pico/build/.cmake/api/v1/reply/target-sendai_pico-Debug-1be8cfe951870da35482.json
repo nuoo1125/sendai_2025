@@ -1409,15 +1409,15 @@
 		},
 		{
 			"backtrace" : 2,
+			"id" : "VL53L0X::@4813714801c8fe0176ef"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "gyro::@4f3daca01e02391b6896"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "servo::@71a01095c50c0656dc8f"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "VL53L0X::@4813714801c8fe0176ef"
 		}
 	],
 	"id" : "sendai_pico::@15c4a824ab2728a3f5e7",
