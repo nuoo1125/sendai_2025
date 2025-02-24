@@ -77,7 +77,7 @@ void move_to_stepper(int target_angle){
     int16_t angle_diff;
     bool right;
     int steps;
-    read_euler_angles(&yaw,&roll,&pitch);
+    read_angle(&yaw,&roll,&pitch);
     float current_angle = yaw/16.0;
     printf("%.2f\n",current_angle);
     while((target_angle-5 > current_angle)||(target_angle+5<current_angle)){
@@ -85,7 +85,7 @@ void move_to_stepper(int target_angle){
         right = angle_diff > 0;
         steps = abs(angle_diff)/step_angle;
         stepper_angle(steps,right);
-        read_euler_angles(&yaw,&roll,&pitch);
+        read_angle(&yaw,&roll,&pitch);
         current_angle = yaw/16.0;
         printf("%.2f\n",current_angle);
         stepper_break();

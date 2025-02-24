@@ -1,6 +1,6 @@
 #pragma once
 //gyro系
-#define I2C_GYRO i2c0
+#define gyro_i2c i2c0
 #define SDA_PIN 18
 #define SCL_PIN 19
 #define ADDRESS 0x28
@@ -15,7 +15,8 @@
 #define step_angle 0.9
 //tof系
 #define VL53L0X_DEFAULT_ADDRESS 0x29
-//#define I2C_TOF i2c1
+#define tof_1 i2c1
+#define tof_2 i2c0
 #define SDA_TOF1 16
 #define SCL_TOF1 17
 #define xshut2 15
@@ -35,3 +36,4 @@
 //deabgu系
 #define buzaa 0
 #define led 25
+#define WS2812_PIN 13
