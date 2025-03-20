@@ -1,0 +1,9 @@
+            gpio(1.2A)     gpio2(1.2A)
+                 gpio3(1.4A)
+                 tof1
+         photo1(50mA) photo2(50mA) photo3(50mA)
+stepper_left(微量)              stepper_right(微量)
+                 gpio4(2A?)//紐
+                 gpio5(1.2A)//anker
+        
+合計　7A+微量(1A)

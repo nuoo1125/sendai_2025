@@ -1,21 +1,27 @@
 #include "pico/stdlib.h"
 #include "hardware/pio.h"
-#include "ws2812.pio.h"
 #include "hardware/i2c.h"
-#include "VL53L0X/VL53L0X.h"
+#include "hardware/pwm.h"
 #include "config.h"
+#include "VL53L0X/VL53L0X.h"
+#include "gyro/gyro.h"
+#include "mcp3208/mcp3208.h"
+#include "servo/servo.h"
+#include "stepper/stepper.h"
+
 int main() {
     stdio_init_all();
-    i2c_init(i2c0, 400 * 1000);
-    gpio_set_function(SDA_TOF1, GPIO_FUNC_I2C);
-    gpio_set_function(SCL_TOF1, GPIO_FUNC_I2C);
-    gpio_pull_up(SDA_TOF1);
-    gpio_pull_up(SCL_TOF1);
-    VL53L0X tof_sensor(i2c0,VL53L0X_DEFAULT_ADDRESS);
-    tof_sensor.init();
-    tof_sensor.setTimeout(500);
-    while(1){
-        printf("millimeters: %d", tof_sensor.readRangeSingleMillimeters());
-        sleep_ms(500);
-    }
+    stepper_setup();
+    unlock();
+    sleep_ms(1000);
+    s35_up();
+    sleep_ms(10000);
+    s35_stop();
+    
+    lock();
+    sleep_ms(2000);
+    s35_down();
+    sleep_ms(10000);
+    s35_stop();
+    unlock();
 }

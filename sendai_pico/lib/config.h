@@ -28,12 +28,12 @@
 #define SPI_PIN_CS   13
 #define SPI_PORT spi1
 //servo系
-#define gpio 28
-#define gpio2 27
-#define gpio3 26
-#define gpio4 22
-#define gpio5 21
+#define gpio 28 //arm
+#define gpio2 27 //arm
+#define gpio3 26 //arm up/down
+#define gpio4 22 //ひも引っ張る
+#define gpio5 21 //rock
 //deabgu系
 #define buzaa 0
 #define led 25
-#define WS2812_PIN 13
+#define WS2812_PIN 1

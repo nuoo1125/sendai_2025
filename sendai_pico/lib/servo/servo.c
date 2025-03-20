@@ -23,6 +23,28 @@ void sg90_angle(float angle) {
     pwm_set_enabled(pwm_slice_num, true);
     pwm_set_enabled(pwm_slice_num2, true);
 }
+void lock(){
+    gpio_set_function(gpio5,GPIO_FUNC_PWM);
+    uint32_t pwm_slice_num5 = pwm_gpio_to_slice_num(gpio5);
+    pwm_set_enabled(pwm_slice_num5,false);
+    pwm_set_wrap(pwm_slice_num5, 25000); 
+    pwm_set_clkdiv(pwm_slice_num5, 64.0f);
+    float duty_cycle = 0.5 + (200 * 2.0 / 180.0); 
+    uint16_t level = (uint16_t)(duty_cycle * 25000.0 / 20.0); 
+    pwm_set_chan_level(pwm_slice_num5, pwm_gpio_to_channel(gpio5), level);
+    pwm_set_enabled(pwm_slice_num5,true);
+}
+void unlock(){
+    gpio_set_function(gpio5,GPIO_FUNC_PWM);
+    uint32_t pwm_slice_num5 = pwm_gpio_to_slice_num(gpio5);
+    pwm_set_enabled(pwm_slice_num5,false);
+    pwm_set_wrap(pwm_slice_num5, 25000); 
+    pwm_set_clkdiv(pwm_slice_num5, 64.0f);
+    float duty_cycle = 0.5 + (70 * 2.0 / 180.0); 
+    uint16_t level = (uint16_t)(duty_cycle * 25000.0 / 20.0); 
+    pwm_set_chan_level(pwm_slice_num5, pwm_gpio_to_channel(gpio5), level);
+    pwm_set_enabled(pwm_slice_num5,true);
+}
 void mg996r(float angle){
     gpio_set_function(gpio3,GPIO_FUNC_PWM);
     uint32_t pwm_slice_num3 = pwm_gpio_to_slice_num(gpio3);
@@ -36,22 +58,21 @@ void mg996r(float angle){
 void s35_stop(){
     gpio_set_function(gpio4,GPIO_FUNC_PWM);
     uint32_t pwm_slice_num4 = pwm_gpio_to_slice_num(gpio4);
-    pwm_set_wrap(pwm_slice_num4, 1000); 
-    pwm_set_clkdiv(pwm_slice_num4, 250);
-    pwm_set_chan_level(pwm_slice_num4, pwm_gpio_to_channel(gpio4),500);
-    pwm_set_enabled(pwm_slice_num4,true);
+    pwm_set_enabled(pwm_slice_num4,false);
 }
 void s35_up(){
     gpio_set_function(gpio4,GPIO_FUNC_PWM);
     uint32_t pwm_slice_num4 = pwm_gpio_to_slice_num(gpio4);
-    pwm_set_wrap(pwm_slice_num4, 500); 
+    pwm_set_enabled(pwm_slice_num4,false);
+    pwm_set_wrap(pwm_slice_num4, 1500); 
     pwm_set_clkdiv(pwm_slice_num4, 250);
-    pwm_set_chan_level(pwm_slice_num4, pwm_gpio_to_channel(gpio4),250);
+    pwm_set_chan_level(pwm_slice_num4, pwm_gpio_to_channel(gpio4),1000);
     pwm_set_enabled(pwm_slice_num4,true);
 }
 void s35_down(){
     gpio_set_function(gpio4,GPIO_FUNC_PWM);
     uint32_t pwm_slice_num4 = pwm_gpio_to_slice_num(gpio4);
+    pwm_set_enabled(pwm_slice_num4,false);
     pwm_set_wrap(pwm_slice_num4,750); 
     pwm_set_clkdiv(pwm_slice_num4, 250);
     pwm_set_chan_level(pwm_slice_num4, pwm_gpio_to_channel(gpio4),375);
