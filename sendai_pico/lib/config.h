@@ -1,6 +1,6 @@
 #pragma once
 //gyro系
-#define gyro_i2c i2c0
+#define gyro_i2c i2c1
 #define SDA_PIN 18
 #define SCL_PIN 19
 #define ADDRESS 0x28

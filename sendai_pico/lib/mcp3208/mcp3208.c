@@ -29,6 +29,6 @@ uint16_t mcp3208_read(uint8_t ch){
 }
 void read_photo(int *photo){
     for(int i=0;i<3;i++){
-        photo[i] = mcp3208_read(i);
+        photo[i] = mcp3208_read(i+5);
     }
 }

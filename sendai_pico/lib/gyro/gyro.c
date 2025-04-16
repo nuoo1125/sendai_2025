@@ -13,15 +13,11 @@ int16_t merge(uint8_t low, uint8_t high) {
 }
 void init_bno055() {
     uint8_t chip_id;
-    gpio_set_function(SDA_PIN, GPIO_FUNC_I2C);
-    gpio_set_function(SCL_PIN, GPIO_FUNC_I2C);
-    gpio_pull_up(SDA_PIN);
-    gpio_pull_up(SCL_PIN);
     i2c_init(gyro_i2c,100*1000);
     gpio_set_function(SDA_PIN, GPIO_FUNC_I2C);
     gpio_set_function(SCL_PIN, GPIO_FUNC_I2C);
     gpio_pull_up(SDA_PIN);
-    gpio_pull_up(SCL_PIN);  
+    gpio_pull_up(SCL_PIN);
     i2c_write_blocking(gyro_i2c, ADDRESS, (uint8_t[]){0x00}, 1, true); 
     i2c_read_blocking(gyro_i2c, ADDRESS, &chip_id, 1, false); 
     if (chip_id != 0xA0) {
@@ -45,13 +41,14 @@ void init_bno055() {
         i2c_write_blocking(gyro_i2c, ADDRESS, data, 2, false); 
         sleep_ms(delay); 
     }
+    printf("BNO055 initialized.\n");
 }
 void read_angle(int16_t* yaw, int16_t* roll, int16_t* pitch) {
     uint8_t buffer[6];
     i2c_write_blocking(gyro_i2c, ADDRESS, (uint8_t[]){EULER_REGISTER}, 1, true); 
     i2c_read_blocking(gyro_i2c, ADDRESS, buffer, 6, false); 
-    *yaw = merge(buffer[0], buffer[1])/16.0;
-    *roll = merge(buffer[2], buffer[3])/16.0;
-    *pitch = merge(buffer[4], buffer[5])/16.0;
+    *yaw = merge(buffer[0], buffer[1]);
+    *roll = merge(buffer[2], buffer[3]);
+    *pitch = merge(buffer[4], buffer[5]);
     
 }

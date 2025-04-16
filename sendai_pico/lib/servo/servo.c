@@ -60,7 +60,7 @@ void s35_stop(){
     uint32_t pwm_slice_num4 = pwm_gpio_to_slice_num(gpio4);
     pwm_set_enabled(pwm_slice_num4,false);
 }
-void s35_up(){
+void s35_down(){
     gpio_set_function(gpio4,GPIO_FUNC_PWM);
     uint32_t pwm_slice_num4 = pwm_gpio_to_slice_num(gpio4);
     pwm_set_enabled(pwm_slice_num4,false);
@@ -69,7 +69,7 @@ void s35_up(){
     pwm_set_chan_level(pwm_slice_num4, pwm_gpio_to_channel(gpio4),1000);
     pwm_set_enabled(pwm_slice_num4,true);
 }
-void s35_down(){
+void s35_up(){
     gpio_set_function(gpio4,GPIO_FUNC_PWM);
     uint32_t pwm_slice_num4 = pwm_gpio_to_slice_num(gpio4);
     pwm_set_enabled(pwm_slice_num4,false);
