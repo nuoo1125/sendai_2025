@@ -34,6 +34,6 @@
 #define gpio4 22 //ひも引っ張る
 #define gpio5 21 //rock
 //deabgu系
-#define buzzer 0
+#define buzzer_pin 0
 #define led 25
 #define WS2812_PIN 1

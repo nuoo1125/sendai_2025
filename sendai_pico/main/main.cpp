@@ -37,8 +37,8 @@ int main() {
     mcp3x08_init();
     gpio_init(25);
     gpio_set_dir(25,GPIO_OUT);
-    gpio_init(buzzer);
-    gpio_set_dir(buzzer,GPIO_OUT);
+    gpio_init(buzzer_pin);
+    gpio_set_dir(buzzer_pin,GPIO_OUT);
     while(1){
         photo();
         linetrace();
