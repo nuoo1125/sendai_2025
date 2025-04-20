@@ -10,7 +10,7 @@
 					[
 						1,
 						81,
-						87
+						88
 					],
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
@@ -785,8 +785,8 @@
 					"source" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/tinyusb",
 					"targetIndexes" : 
 					[
-						10,
-						11
+						11,
+						12
 					]
 				},
 				{
@@ -1023,7 +1023,8 @@
 						83,
 						84,
 						85,
-						86
+						86,
+						87
 					],
 					"jsonFile" : "directory-lib-Debug-e9069484d90298468a11.json",
 					"minimumCMakeVersion" : 
@@ -1046,7 +1047,22 @@
 					"source" : "lib/stepper",
 					"targetIndexes" : 
 					[
-						9
+						10
+					]
+				},
+				{
+					"build" : "lib/debagu",
+					"jsonFile" : "directory-lib.debagu-Debug-723d516e0b565dc6cfac.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 81,
+					"projectIndex" : 0,
+					"source" : "lib/debagu",
+					"targetIndexes" : 
+					[
+						5
 					]
 				},
 				{
@@ -1061,7 +1077,7 @@
 					"source" : "lib/gyro",
 					"targetIndexes" : 
 					[
-						5
+						6
 					]
 				},
 				{
@@ -1091,7 +1107,7 @@
 					"source" : "lib/mcp3208",
 					"targetIndexes" : 
 					[
-						6
+						7
 					]
 				},
 				{
@@ -1106,7 +1122,7 @@
 					"source" : "lib/servo",
 					"targetIndexes" : 
 					[
-						8
+						9
 					]
 				},
 				{
@@ -1121,7 +1137,7 @@
 					"source" : "main",
 					"targetIndexes" : 
 					[
-						7
+						8
 					]
 				}
 			],
@@ -1142,7 +1158,8 @@
 						84,
 						85,
 						86,
-						87
+						87,
+						88
 					],
 					"name" : "pico_test",
 					"targetIndexes" : 
@@ -1152,7 +1169,8 @@
 						6,
 						7,
 						8,
-						9
+						9,
+						10
 					]
 				},
 				{
@@ -1247,15 +1265,15 @@
 						2,
 						3,
 						4,
-						10,
-						11
+						11,
+						12
 					]
 				}
 			],
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 84,
+					"directoryIndex" : 85,
 					"id" : "VL53L0X::@4813714801c8fe0176ef",
 					"jsonFile" : "target-VL53L0X-Debug-ff00d1b153843851988e.json",
 					"name" : "VL53L0X",
@@ -1291,27 +1309,34 @@
 				},
 				{
 					"directoryIndex" : 83,
+					"id" : "debagu::@a8367424efe86edfebe9",
+					"jsonFile" : "target-debagu-Debug-709bcc96384f107b98a7.json",
+					"name" : "debagu",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 84,
 					"id" : "gyro::@4f3daca01e02391b6896",
 					"jsonFile" : "target-gyro-Debug-bfb93939ac9ea86d1154.json",
 					"name" : "gyro",
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 85,
+					"directoryIndex" : 86,
 					"id" : "mcp3208::@3a14ae9c07c56a8f1dd5",
 					"jsonFile" : "target-mcp3208-Debug-0dbacfddffa9c3816622.json",
 					"name" : "mcp3208",
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 87,
+					"directoryIndex" : 88,
 					"id" : "sendai_pico::@15c4a824ab2728a3f5e7",
-					"jsonFile" : "target-sendai_pico-Debug-d9ab083e23c8f77694c1.json",
+					"jsonFile" : "target-sendai_pico-Debug-a789fe3a77a12e6d1051.json",
 					"name" : "sendai_pico",
 					"projectIndex" : 0
 				},
 				{
-					"directoryIndex" : 86,
+					"directoryIndex" : 87,
 					"id" : "servo::@71a01095c50c0656dc8f",
 					"jsonFile" : "target-servo-Debug-667412b5233aecc5afdc.json",
 					"name" : "servo",

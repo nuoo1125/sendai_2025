@@ -3,7 +3,6 @@
 #include "mcp3208.h"
 #include "../config.h"
 
-
 void mcp3x08_init(){
     spi_init(SPI_PORT, 1000 * 1000);
     gpio_set_function(SPI_PIN_MISO, GPIO_FUNC_SPI);
@@ -26,9 +25,4 @@ uint16_t mcp3208_read(uint8_t ch){
     gpio_put(SPI_PIN_CS,1);
 
     return (buf[1] & 0b00001111) << 8 | buf[2];
-}
-void read_photo(int *photo){
-    for(int i=0;i<3;i++){
-        photo[i] = mcp3208_read(i+5);
-    }
 }
