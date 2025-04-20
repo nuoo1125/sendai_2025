@@ -8,7 +8,7 @@
 	"installers" : [],
 	"paths" : 
 	{
-		"build" : "lib/debagu",
-		"source" : "lib/debagu"
+		"build" : "lib/interface",
+		"source" : "lib/interface"
 	}
 }

@@ -629,7 +629,7 @@
 			"path" : "lib/stepper/CMakeLists.txt"
 		},
 		{
-			"path" : "lib/debagu/CMakeLists.txt"
+			"path" : "lib/interface/CMakeLists.txt"
 		},
 		{
 			"path" : "lib/gyro/CMakeLists.txt"

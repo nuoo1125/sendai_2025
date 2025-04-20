@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/touma/sendai_2025/sendai_pico/lib
+# Install script for directory: C:/Users/touma/sendai_2025/sendai_pico/lib/interface
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -35,16 +35,5 @@ endif()
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/gcc-arm-none-eabi/bin/arm-none-eabi-objdump.exe")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/stepper/cmake_install.cmake")
-  include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/interface/cmake_install.cmake")
-  include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/gyro/cmake_install.cmake")
-  include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/VL53L0X/cmake_install.cmake")
-  include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/mcp3208/cmake_install.cmake")
-  include("C:/Users/touma/sendai_2025/sendai_pico/build/lib/servo/cmake_install.cmake")
-
 endif()
 

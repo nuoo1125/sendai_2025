@@ -1,0 +1,2 @@
+add_library(interface interface.c)
+target_link_libraries(interface pico_stdlib)

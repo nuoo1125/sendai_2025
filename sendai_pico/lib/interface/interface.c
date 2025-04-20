@@ -1,4 +1,4 @@
-#include "debug.h"
+#include "interface.h"
 
 #include "pico/stdlib.h"
 #include "../config.h"

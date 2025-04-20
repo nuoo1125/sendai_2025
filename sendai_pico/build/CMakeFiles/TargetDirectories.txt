@@ -171,9 +171,9 @@ C:/Users/touma/sendai_2025/sendai_pico/build/lib/CMakeFiles/rebuild_cache.dir
 C:/Users/touma/sendai_2025/sendai_pico/build/lib/stepper/CMakeFiles/stepper.dir
 C:/Users/touma/sendai_2025/sendai_pico/build/lib/stepper/CMakeFiles/edit_cache.dir
 C:/Users/touma/sendai_2025/sendai_pico/build/lib/stepper/CMakeFiles/rebuild_cache.dir
-C:/Users/touma/sendai_2025/sendai_pico/build/lib/debagu/CMakeFiles/debagu.dir
-C:/Users/touma/sendai_2025/sendai_pico/build/lib/debagu/CMakeFiles/edit_cache.dir
-C:/Users/touma/sendai_2025/sendai_pico/build/lib/debagu/CMakeFiles/rebuild_cache.dir
+C:/Users/touma/sendai_2025/sendai_pico/build/lib/interface/CMakeFiles/interface.dir
+C:/Users/touma/sendai_2025/sendai_pico/build/lib/interface/CMakeFiles/edit_cache.dir
+C:/Users/touma/sendai_2025/sendai_pico/build/lib/interface/CMakeFiles/rebuild_cache.dir
 C:/Users/touma/sendai_2025/sendai_pico/build/lib/gyro/CMakeFiles/gyro.dir
 C:/Users/touma/sendai_2025/sendai_pico/build/lib/gyro/CMakeFiles/edit_cache.dir
 C:/Users/touma/sendai_2025/sendai_pico/build/lib/gyro/CMakeFiles/rebuild_cache.dir

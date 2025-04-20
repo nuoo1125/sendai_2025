@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "lib/debagu/libdebagu.a"
+			"path" : "lib/interface/libinterface.a"
 		}
 	],
 	"backtrace" : 1,
@@ -18,7 +18,7 @@
 		],
 		"files" : 
 		[
-			"lib/debagu/CMakeLists.txt",
+			"lib/interface/CMakeLists.txt",
 			"C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/boot_stage2/CMakeLists.txt"
 		],
 		"nodes" : 
@@ -375,22 +375,6 @@
 				{
 					"backtrace" : 5,
 					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/boot_stage2/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_pwm/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_adc/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_spi/include"
 				}
 			],
 			"language" : "C",
@@ -437,10 +421,7 @@
 				39,
 				43,
 				44,
-				45,
-				46,
-				47,
-				48
+				45
 			]
 		},
 		{
@@ -758,22 +739,6 @@
 				{
 					"backtrace" : 5,
 					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/boot_stage2/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_pwm/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_adc/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_spi/include"
 				}
 			],
 			"language" : "ASM",
@@ -1126,22 +1091,6 @@
 				{
 					"backtrace" : 5,
 					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/boot_stage2/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_pwm/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_adc/include"
-				},
-				{
-					"backtrace" : 5,
-					"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_spi/include"
 				}
 			],
 			"language" : "CXX",
@@ -1166,13 +1115,13 @@
 			"id" : "bs2_default_padded_checksummed_asm::@bc554eaed616d198a22d"
 		}
 	],
-	"id" : "debagu::@a8367424efe86edfebe9",
-	"name" : "debagu",
-	"nameOnDisk" : "libdebagu.a",
+	"id" : "interface::@0353bc4a453d7a83de3e",
+	"name" : "interface",
+	"nameOnDisk" : "libinterface.a",
 	"paths" : 
 	{
-		"build" : "lib/debagu",
-		"source" : "lib/debagu"
+		"build" : "lib/interface",
+		"source" : "lib/interface"
 	},
 	"sourceGroups" : 
 	[
@@ -1214,10 +1163,7 @@
 				42,
 				43,
 				44,
-				45,
-				46,
-				47,
-				48
+				45
 			]
 		},
 		{
@@ -1243,7 +1189,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "lib/debagu/debagu.c",
+			"path" : "lib/interface/interface.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -1514,24 +1460,6 @@
 			"backtrace" : 5,
 			"compileGroupIndex" : 0,
 			"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 5,
-			"compileGroupIndex" : 0,
-			"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_i2c/i2c.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 5,
-			"compileGroupIndex" : 0,
-			"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_adc/adc.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 5,
-			"compileGroupIndex" : 0,
-			"path" : "C:/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk/src/rp2_common/hardware_spi/spi.c",
 			"sourceGroupIndex" : 0
 		}
 	],

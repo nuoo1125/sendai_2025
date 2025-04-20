@@ -1051,18 +1051,18 @@
 					]
 				},
 				{
-					"build" : "lib/debagu",
-					"jsonFile" : "directory-lib.debagu-Debug-723d516e0b565dc6cfac.json",
+					"build" : "lib/interface",
+					"jsonFile" : "directory-lib.interface-Debug-6c9a3008dee40236b868.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.12"
 					},
 					"parentIndex" : 81,
 					"projectIndex" : 0,
-					"source" : "lib/debagu",
+					"source" : "lib/interface",
 					"targetIndexes" : 
 					[
-						5
+						6
 					]
 				},
 				{
@@ -1077,7 +1077,7 @@
 					"source" : "lib/gyro",
 					"targetIndexes" : 
 					[
-						6
+						5
 					]
 				},
 				{
@@ -1308,17 +1308,17 @@
 					"projectIndex" : 1
 				},
 				{
-					"directoryIndex" : 83,
-					"id" : "debagu::@a8367424efe86edfebe9",
-					"jsonFile" : "target-debagu-Debug-709bcc96384f107b98a7.json",
-					"name" : "debagu",
-					"projectIndex" : 0
-				},
-				{
 					"directoryIndex" : 84,
 					"id" : "gyro::@4f3daca01e02391b6896",
 					"jsonFile" : "target-gyro-Debug-bfb93939ac9ea86d1154.json",
 					"name" : "gyro",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 83,
+					"id" : "interface::@0353bc4a453d7a83de3e",
+					"jsonFile" : "target-interface-Debug-c2038c07b1c32decb747.json",
+					"name" : "interface",
 					"projectIndex" : 0
 				},
 				{
@@ -1331,7 +1331,7 @@
 				{
 					"directoryIndex" : 88,
 					"id" : "sendai_pico::@15c4a824ab2728a3f5e7",
-					"jsonFile" : "target-sendai_pico-Debug-a789fe3a77a12e6d1051.json",
+					"jsonFile" : "target-sendai_pico-Debug-27ec10655f2fbdfcad70.json",
 					"name" : "sendai_pico",
 					"projectIndex" : 0
 				},
