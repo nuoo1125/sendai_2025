@@ -10,13 +10,18 @@
 #include "mcp3208/mcp3208.h"
 #include "servo/servo.h"
 #include "stepper/stepper.h"
+#include "interface/interface.h"
+
 int mid_photo;
 int left_photo;
 int right_photo;
-void linetrace(){
-    int shiki = 800;
+int shiki = 800;
+
+
+void linetrace(){//白1100 黒300
     if(mid_photo > shiki && left_photo > shiki && right_photo<shiki)stepper_slow(0,1);
     else if(mid_photo > shiki && left_photo < shiki && right_photo>shiki)stepper_slow(1,0);
+    else if(mid_photo<shiki && left_photo < shiki && right_photo < shiki)buzzer();
     else stepper_slow(1,1);
 }
 void photo(){
@@ -33,12 +38,9 @@ void photo(){
 
 int main() {
     stdio_init_all();
+    ws2812_program_init(WS2812_PIN,800000,IS_RGBW);
     stepper_setup();
     mcp3x08_init();
-    gpio_init(25);
-    gpio_set_dir(25,GPIO_OUT);
-    gpio_init(buzzer_pin);
-    gpio_set_dir(buzzer_pin,GPIO_OUT);
     while(1){
         photo();
         linetrace();

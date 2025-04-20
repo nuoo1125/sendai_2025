@@ -116,6 +116,9 @@ void set_pixel_color(uint8_t red, uint8_t green, uint8_t blue) {
     uint32_t color = (green << 24) | (red << 16) | (blue << 8);
     pio_sm_put_blocking(pio0, 0, color);
 }
-
+void red_led(){set_pixel_color(255,0,0);}
+void green_led(){set_pixel_color(0,255,0);}
+void blue_led(){set_pixel_color(0,0,255);}
+void yellow_led(){set_pixel_color(120,0,120);}
 
 #endif

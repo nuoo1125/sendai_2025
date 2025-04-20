@@ -6,6 +6,8 @@
 extern "C" {
 #endif
 void buzzer();
+void led_on();
+void led_off();
 #ifdef __cplusplus
 }
 #endif
