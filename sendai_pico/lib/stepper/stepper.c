@@ -21,16 +21,16 @@ void stepper_setup(){
 } 
 void stepper_slow(bool forward_l,bool forward_r){
     if(forward_l == 1 && forward_r == 1){
-        gpio_put(direction_l,0);
-        gpio_put(direction_r,1);        
+        gpio_put(direction_l,1);
+        gpio_put(direction_r,0);        
     }
     else if(forward_l == 0 && forward_r == 1){
-        gpio_put(direction_l,1);
+        gpio_put(direction_l,0);
         gpio_put(direction_r,0);        
     }
     else if(forward_l == 0 && forward_r == 0){
-        gpio_put(direction_l,1);
-        gpio_put(direction_r,0);        
+        gpio_put(direction_l,0);
+        gpio_put(direction_r,1);        
     }
     else if(forward_l == 1 &&forward_r == 0){
         gpio_put(direction_l,1);

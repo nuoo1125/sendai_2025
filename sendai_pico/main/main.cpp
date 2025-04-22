@@ -43,7 +43,6 @@ int main() {
     mcp3x08_init();
     while(1){
         photo();
-        linetrace();
     }
     return 0;
 }
