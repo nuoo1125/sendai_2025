@@ -54,6 +54,7 @@ void stepper_break(){
     uint slice_num_l = pwm_gpio_to_slice_num(clock_l);
     pwm_set_enabled(slice_num_l,false);
     pwm_set_enabled(slice_num_r, false);
+    gpio_put(sleep,1);
 }
 void stepper_angle(int steps,bool right){
     if(right){
@@ -69,8 +70,7 @@ void stepper_angle(int steps,bool right){
     pwm_set_enabled(slice_num_l,true);
     pwm_set_enabled(slice_num_r,true);
     sleep_ms(steps*2.08);
-    pwm_set_enabled(slice_num_l,false);
-    pwm_set_enabled(slice_num_r, false);
+    stepper_break();
 }
 void move_to_stepper(int target_angle){
     int16_t yaw,roll,pitch;

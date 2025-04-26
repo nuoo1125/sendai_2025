@@ -18,6 +18,11 @@ void init_bno055() {
     gpio_set_function(SCL_PIN, GPIO_FUNC_I2C);
     gpio_pull_up(SDA_PIN);
     gpio_pull_up(SCL_PIN);
+    i2c_init(tof_1,100*1000);
+    gpio_set_function(SDA_TOF1,GPIO_FUNC_I2C);
+    gpio_set_function(SCL_TOF1,GPIO_FUNC_I2C);
+    gpio_pull_up(SDA_TOF1);
+    gpio_pull_up(SCL_TOF1);
     i2c_write_blocking(gyro_i2c, ADDRESS, (uint8_t[]){0x00}, 1, true); 
     i2c_read_blocking(gyro_i2c, ADDRESS, &chip_id, 1, false); 
     if (chip_id != 0xA0) {
