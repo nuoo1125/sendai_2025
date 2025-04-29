@@ -20,7 +20,7 @@
 5716	6165	7668199764673053	lib/servo/CMakeFiles/servo.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj	a1384e3b758c1926
 411	796	7668199711522812	lib/stepper/CMakeFiles/stepper.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/mutex.c.obj	797c30a5d8eb2494
 6659	6887	7668199772416713	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj	73ffc1dc134e6e71
-136	782	7673448589576373	lib/stepper/CMakeFiles/stepper.dir/stepper.c.obj	cc4a2b8916bab2d7
+74	297	7675328983194204	lib/stepper/CMakeFiles/stepper.dir/stepper.c.obj	cc4a2b8916bab2d7
 3539	3845	7668199742145831	lib/VL53L0X/CMakeFiles/VL53L0X.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_util/datetime.c.obj	49b73b19ba4f716a
 1602	2029	7668199723498373	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/mutex.c.obj	bea29f2b9c2eb863
 415	719	7668199710821978	lib/stepper/CMakeFiles/stepper.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/critical_section.c.obj	a60c4745c58ec18e
@@ -90,7 +90,7 @@
 1532	2241	7673448604058508	lib/VL53L0X/libVL53L0X.a	cdcc592f1eb5d550
 1041	1376	7668199717025808	lib/stepper/CMakeFiles/stepper.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj	bdcfd19d72770710
 1289	1515	7668199718798985	lib/stepper/CMakeFiles/stepper.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj	f2b09d5ba444861f
-149	1316	7673484706790688	main/CMakeFiles/sendai_pico.dir/main.cpp.obj	5111007149f32326
+84	758	7675352190009747	main/CMakeFiles/sendai_pico.dir/main.cpp.obj	5111007149f32326
 1383	1590	7668199719586340	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj	93baa8d7ac836f48
 6549	6881	7668199772416713	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj	c80cb87cf89228d2
 145	485	7668203153653399	lib/interface/CMakeFiles/interface.dir/interface.c.obj	3aee5cdd36c9c1ab
@@ -116,7 +116,7 @@
 1591	1954	7668199723089942	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/lock_core.c.obj	3fe058a67f4c5f61
 1690	1972	7668199723346080	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj	f7521556c7045559
 7608	8249	7668199785923134	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/dcd_rp2040.c.obj	e6cbd5907b7a6938
-783	1794	7673448599641099	lib/stepper/libstepper.a	d3bdc7eca0b37a53
+298	417	7675328984440557	lib/stepper/libstepper.a	d3bdc7eca0b37a53
 6734	7136	7668199775098972	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/lock_core.c.obj	9a27004e82ee712e
 1651	2001	7668199723498373	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_util/datetime.c.obj	97a3152b04a10287
 1645	2011	7668199723628982	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj	879dc0a1d7d90081
@@ -374,4 +374,13 @@
 8244	8521	7668199788987072	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj	ef28b3ea90e0ef56
 8178	8538	7668199789133889	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/tusb.c.obj	978671ffcafd2461
 8250	8575	7668199789504664	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj	37dbe409b115d330
-1317	2993	7673484714725215	main/sendai_pico.elf	93c0917e05779eef
+758	1724	7675352195338770	main/sendai_pico.elf	93c0917e05779eef
+147	692	7676267888406820	lib/gyro/CMakeFiles/gyro.dir/gyro.c.obj	78e16694aa719097
+135	711	7676267888589497	lib/stepper/CMakeFiles/stepper.dir/stepper.c.obj	cc4a2b8916bab2d7
+156	1602	7676267897565354	main/CMakeFiles/sendai_pico.dir/main.cpp.obj	5111007149f32326
+693	1692	7676267898402621	lib/gyro/libgyro.a	766356656e5fa394
+711	1693	7676267898402621	lib/stepper/libstepper.a	d3bdc7eca0b37a53
+1693	5206	7676267923060736	main/sendai_pico.elf	93c0917e05779eef
+100	492	7676268929388408	lib/stepper/CMakeFiles/stepper.dir/stepper.c.obj	cc4a2b8916bab2d7
+493	723	7676268931595551	lib/stepper/libstepper.a	d3bdc7eca0b37a53
+723	2359	7676268939498823	main/sendai_pico.elf	93c0917e05779eef

@@ -48,12 +48,10 @@ void init_bno055() {
     }
     printf("BNO055 initialized.\n");
 }
-void read_angle(int16_t* yaw, int16_t* roll, int16_t* pitch) {
+int16_t read_angle() {
     uint8_t buffer[6];
     i2c_write_blocking(gyro_i2c, ADDRESS, (uint8_t[]){EULER_REGISTER}, 1, true); 
     i2c_read_blocking(gyro_i2c, ADDRESS, buffer, 6, false); 
-    *yaw = merge(buffer[0], buffer[1]);
-    *roll = merge(buffer[2], buffer[3]);
-    *pitch = merge(buffer[4], buffer[5]);
+    return merge(buffer[0], buffer[1]);
     
 }

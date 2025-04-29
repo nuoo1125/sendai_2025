@@ -54,7 +54,6 @@ void stepper_break(){
     uint slice_num_l = pwm_gpio_to_slice_num(clock_l);
     pwm_set_enabled(slice_num_l,false);
     pwm_set_enabled(slice_num_r, false);
-    gpio_put(sleep,1);
 }
 void stepper_angle(int steps,bool right){
     if(right){
@@ -73,20 +72,20 @@ void stepper_angle(int steps,bool right){
     stepper_break();
 }
 void move_to_stepper(int target_angle){
-    int16_t yaw,roll,pitch;
+    target_angle = target_angle%360;
+    int16_t yaw;
     int16_t angle_diff;
     bool right;
     int steps;
-    read_angle(&yaw,&roll,&pitch);
+    yaw = read_angle();
     float current_angle = yaw/16.0;
     printf("%.2f\n",current_angle);
-    while((target_angle-5 > current_angle)||(target_angle+5<current_angle)){
+    while((target_angle-1 > current_angle)||(target_angle+1<current_angle)){
         angle_diff = target_angle - current_angle;
         right = angle_diff > 0;
         steps = abs(angle_diff)/step_angle;
         stepper_angle(steps,right);
-        read_angle(&yaw,&roll,&pitch);
-        current_angle = yaw/16.0;
+        current_angle = read_angle()/16.0;
         printf("%.2f\n",current_angle);
         stepper_break();
     }

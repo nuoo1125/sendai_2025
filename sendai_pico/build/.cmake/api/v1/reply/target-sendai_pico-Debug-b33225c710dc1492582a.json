@@ -1405,15 +1405,7 @@
 		},
 		{
 			"backtrace" : 2,
-			"id" : "interface::@0353bc4a453d7a83de3e"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "stepper::@20ad3cf409baec8a04a7"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "servo::@71a01095c50c0656dc8f"
 		},
 		{
 			"backtrace" : 2,
@@ -1425,7 +1417,15 @@
 		},
 		{
 			"backtrace" : 2,
+			"id" : "interface::@0353bc4a453d7a83de3e"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "mcp3208::@3a14ae9c07c56a8f1dd5"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "servo::@71a01095c50c0656dc8f"
 		}
 	],
 	"id" : "sendai_pico::@15c4a824ab2728a3f5e7",

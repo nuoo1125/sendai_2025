@@ -37,7 +37,6 @@ void photo(){
 }
 
 int main() {
-    int16_t yaw, roll, pitch;
     stdio_init_all();
     ws2812_program_init(WS2812_PIN,800000,IS_RGBW);
     stepper_setup();
@@ -53,10 +52,8 @@ int main() {
     tof_backward.startContinuous();
     stepper_slow(1,1);
     while(1){
-        while(tof_backward.readRangeSingleMillimeters()>500){
-            stepper_slow(1,1);
-        }
-        stepper_break();
+        photo();
+        linetrace();
     }
     return 0;
 }

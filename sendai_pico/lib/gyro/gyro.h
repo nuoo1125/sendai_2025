@@ -14,7 +14,7 @@ extern "C" {
 #endif
 int16_t merge(uint8_t low, uint8_t high);
 void init_bno055();
-void read_angle(int16_t* yaw, int16_t* roll, int16_t* pitch);
+int16_t read_angle();
 #ifdef __cplusplus
 }
 #endif
