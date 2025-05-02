@@ -15,13 +15,19 @@
 int mid_photo;
 int left_photo;
 int right_photo;
-int shiki = 800;
+int shiki = 500;
 
 
 void linetrace(){//白1100 黒300
     if(mid_photo > shiki && left_photo > shiki && right_photo<shiki)stepper_slow(1,0);
     else if(mid_photo > shiki && left_photo < shiki && right_photo > shiki)stepper_slow(0,1);
-    else if(mid_photo<shiki && left_photo < shiki && right_photo < shiki)buzzer();
+    else if(mid_photo<shiki && left_photo < shiki && right_photo < shiki){
+        stepper_break();
+        buzzer();
+        sleep_ms(1000);
+        stepper_slow(1,1);
+        sleep_ms(300);
+    }
     else stepper_slow(1,1);
 }
 void photo(){
