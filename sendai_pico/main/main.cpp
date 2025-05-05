@@ -12,35 +12,6 @@
 #include "stepper/stepper.h"
 #include "interface/interface.h"
 
-int mid_photo;
-int left_photo;
-int right_photo;
-int shiki = 500;
-
-
-void linetrace(){//白1100 黒300
-    if(mid_photo > shiki && left_photo > shiki && right_photo<shiki)stepper_slow(1,0);
-    else if(mid_photo > shiki && left_photo < shiki && right_photo > shiki)stepper_slow(0,1);
-    else if(mid_photo<shiki && left_photo < shiki && right_photo < shiki){
-        stepper_break();
-        buzzer();
-        sleep_ms(1000);
-        stepper_slow(1,1);
-        sleep_ms(300);
-    }
-    else stepper_slow(1,1);
-}
-void photo(){
-    left_photo = mcp3208_read(5);
-    mid_photo = mcp3208_read(6);
-    right_photo = mcp3208_read(7);
-    printf("L:");
-    printf("%d\n",left_photo);
-    printf("M:");
-    printf("%d\n",mid_photo);
-    printf("R:");
-    printf("%d\n",right_photo);
-}
 int main() {
     stdio_init_all();
     ws2812_program_init(WS2812_PIN,800000,IS_RGBW);
