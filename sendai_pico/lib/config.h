@@ -26,7 +26,7 @@
 #define SPI_PIN_MOSI 11
 #define SPI_PIN_MISO 12
 #define SPI_PIN_CS   13
-#define SPI_PORT spi1
+#define SPI_PORT spi0
 //servo系
 #define gpio 28 //arm
 #define gpio2 27 //arm
@@ -37,4 +37,8 @@
 #define buzzer_pin 0
 #define led 25
 #define WS2812_PIN 1
-
+//camera
+#define UART_ID uart1
+#define BAUD_RATE 115200
+#define UART_TX_PIN 8 
+#define UART_RX_PIN 9  
