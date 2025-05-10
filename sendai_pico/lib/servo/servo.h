@@ -14,6 +14,11 @@ void unlock();
 void s35_stop();
 void s35_up();
 void s35_down();
+void arm_open();
+void arm_close();
+void arm_up();
+void arm_down();
+void arm_on();
 #ifdef __cplusplus
 }
 #endif

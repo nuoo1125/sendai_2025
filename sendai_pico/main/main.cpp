@@ -12,10 +12,45 @@
 #include "stepper/stepper.h"
 #include "interface/interface.h"
 
-int main() {
+int mid_photo;
+int left_photo;
+int right_photo;
+int shiki = 500;
+int stage = 0;
+
+void photo() {
+    left_photo = mcp3208_read(5);
+    mid_photo = mcp3208_read(6);
+    right_photo = mcp3208_read(7);
+    printf("L:%d", left_photo);
+    printf(" ");
+    printf("M:%d", mid_photo);
+    printf(" ");
+    printf("R:%d\n", right_photo);
+}
+
+void linetrace() {
+    if(mid_photo > shiki && left_photo > shiki && right_photo < shiki)
+        stepper_slow(1, 0);
+    else if(mid_photo > shiki && left_photo < shiki && right_photo > shiki)
+        stepper_slow(0, 1);
+    else if(mid_photo < shiki && left_photo < shiki && right_photo < shiki){
+        stage += 1;
+        stepper_break();
+        buzzer();
+        sleep_ms(1000);
+        stepper_slow(1, 1);
+        sleep_ms(300);
+    }
+    else
+        stepper_slow(1, 1);
+}
+
+int main(){
     stdio_init_all();
     ws2812_program_init(WS2812_PIN,800000,IS_RGBW);
     stepper_setup();
+    /*
     mcp3x08_init();
     init_bno055();
     VL53L0X tof_forward(i2c1,VL53L0X_DEFAULT_ADDRESS);
@@ -29,21 +64,11 @@ int main() {
     uart_init(UART_ID, BAUD_RATE);
     gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);
     gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
-    stepper_slow(1,1);
     char buffer[128];
     int index = 0;
-    while (true) {
-        if (uart_is_readable(UART_ID)) {
-            char c = uart_getc(UART_ID);
-            if (c == '\n' || index >= sizeof(buffer) - 1) {
-                buffer[index] = '\0';
-                printf("受信行: %s\n", buffer);
-                index = 0;
-            } else {
-                buffer[index++] = c;
-            }
-        }
+    */
+    while(1){
+        s35_up();
+        sleep_ms(10*1000);
     }
-        return 0;
-    
 }

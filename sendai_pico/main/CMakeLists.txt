@@ -1,4 +1,4 @@
-add_executable(sendai_pico main.cpp movement.c)
+add_executable(sendai_pico main.cpp)
 
 target_include_directories(sendai_pico PRIVATE ../lib)
 
