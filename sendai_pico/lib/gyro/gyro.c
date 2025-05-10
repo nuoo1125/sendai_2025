@@ -53,5 +53,4 @@ int16_t read_angle() {
     i2c_write_blocking(gyro_i2c, ADDRESS, (uint8_t[]){EULER_REGISTER}, 1, true); 
     i2c_read_blocking(gyro_i2c, ADDRESS, buffer, 6, false); 
     return merge(buffer[0], buffer[1]);
-    
 }
