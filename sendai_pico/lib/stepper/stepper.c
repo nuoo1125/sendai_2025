@@ -77,14 +77,14 @@ void move_to_stepper(int target_angle){
     int16_t angle_diff;
     bool right;
     int steps;
-    float current_angle = read_angle()/16.0;
+    float current_angle = read_angle();
     printf("%.2f\n",current_angle);
     while(abs(current_angle - target_angle) > 1){
         angle_diff = target_angle - current_angle;      
         right = angle_diff > 0;
         steps = abs(angle_diff)/step_angle;
         stepper_angle(steps,right);
-        current_angle = read_angle()/16.0;
+        current_angle = read_angle();
         printf("%.2f\n",current_angle);
         stepper_break();
     }
