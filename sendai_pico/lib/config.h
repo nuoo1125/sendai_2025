@@ -1,5 +1,6 @@
 #pragma once
 //gyro系
+#define gyro_reset 20
 #define gyro_i2c i2c1
 #define SDA_PIN 18
 #define SCL_PIN 19
@@ -20,7 +21,7 @@
 #define SDA_TOF1 16
 #define SCL_TOF1 17
 #define xshut2 15
-#define xshut1 20
+#define xshut1 14
 //mcp3208系
 #define SPI_PIN_SCK  10
 #define SPI_PIN_MOSI 11

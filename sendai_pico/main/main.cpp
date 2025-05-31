@@ -11,7 +11,6 @@
 #include "servo/servo.h"
 #include "stepper/stepper.h"
 #include "interface/interface.h"
-
 int mid_photo;
 int left_photo;
 int right_photo;
@@ -49,10 +48,9 @@ void linetrace() {
 int main(){
     stdio_init_all();
     ws2812_program_init(WS2812_PIN,800000,IS_RGBW);
-    stepper_setup();
-    /*
     mcp3x08_init();
     init_bno055();
+    stepper_setup();
     VL53L0X tof_forward(i2c1,VL53L0X_DEFAULT_ADDRESS);
     VL53L0X tof_backward(i2c0,VL53L0X_DEFAULT_ADDRESS);
     tof_forward.init();
@@ -64,11 +62,38 @@ int main(){
     uart_init(UART_ID, BAUD_RATE);
     gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);
     gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
-    char buffer[128];
+    int16_t buffer[128];
     int index = 0;
-    */
     while(1){
-        s35_up();
-        sleep_ms(10*1000);
+    if(stage==4){
+    if(tof_forward.readRangeSingleMillimeters()<=150){
+        stepper_break();
+        arm_down();
+        sleep_ms(500);
+        arm_open();
+        sleep_ms(1000);
+        stepper_slow(1,1);
+        sleep_ms(350);
+        stepper_break();
+        arm_close();
+        sleep_ms(1000);
+        arm_up();
+        sleep_ms(1000);        
+        arm_on();
+        sleep_ms(1000);
+        arm_down();
+        sleep_ms(3000);
+        unlock();
+    }
+    else{
+        stepper_slow(1,1);
+    }
+
+    }
+    else{
+        photo();
+        linetrace();
     }
 }
+}
+        
