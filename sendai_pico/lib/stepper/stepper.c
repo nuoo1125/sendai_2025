@@ -20,6 +20,8 @@ void stepper_setup(){
     gpio_set_dir(direction_r,GPIO_OUT);
 } 
 void stepper_slow(bool forward_l,bool forward_r){
+    gpio_set_function(5, GPIO_FUNC_PWM);
+    gpio_set_function(7,GPIO_FUNC_PWM);
     if(forward_l == 1 && forward_r == 1){
         gpio_put(direction_l,1);
         gpio_put(direction_r,0);        
@@ -56,6 +58,8 @@ void stepper_break(){
     pwm_set_enabled(slice_num_r, false);
 }
 void stepper_angle(int steps,bool right){
+gpio_set_function(5, GPIO_FUNC_PWM);
+gpio_set_function(7,GPIO_FUNC_PWM);
     if(right){
         gpio_put(direction_l,1);
         gpio_put(direction_r,1);
@@ -72,6 +76,8 @@ void stepper_angle(int steps,bool right){
     stepper_break();
 }
 void move_to_stepper(int target_angle){
+    gpio_set_function(clock_l, GPIO_FUNC_PWM);
+    gpio_set_function(clock_r,GPIO_FUNC_PWM);
     target_angle += 720;
     target_angle %= 360;
     int16_t angle_diff;

@@ -78,22 +78,26 @@ void arm_close(){
     pwm_set_enabled(pwm_slice_num2, true);
 }
 void lock(){
+    pwm_set_chan_level(pwm_gpio_to_slice_num(5), pwm_gpio_to_channel(5), 0);
+    gpio_set_function(5, GPIO_FUNC_SIO);  
     gpio_set_function(21,GPIO_FUNC_PWM);
     uint32_t pwm_slice_num9 = pwm_gpio_to_slice_num(21);
     pwm_set_wrap(pwm_slice_num9, 25000); 
     pwm_set_clkdiv(pwm_slice_num9, 64.0f);
-    float duty_cycle = 0.5 + (200 * 2.0 / 180.0); 
-    uint16_t level = (uint16_t)(duty_cycle * 25000.0 / 20.0); 
+    float duty_cycle9 = 0.5 + (200 * 2.0 / 180.0); 
+    uint16_t level = (uint16_t)(duty_cycle9 * 25000.0 / 20.0); 
     pwm_set_chan_level(pwm_slice_num9, pwm_gpio_to_channel(21), level);
     pwm_set_enabled(pwm_slice_num9,true);
 }
 void unlock(){
+    pwm_set_chan_level(pwm_gpio_to_slice_num(5), pwm_gpio_to_channel(5), 0);
+    gpio_set_function(5, GPIO_FUNC_SIO);  
     gpio_set_function(21,GPIO_FUNC_PWM);
     uint32_t pwm_slice_num9 = pwm_gpio_to_slice_num(21);
     pwm_set_wrap(pwm_slice_num9, 25000); 
     pwm_set_clkdiv(pwm_slice_num9, 64.0f);
-    float duty_cycle = 0.5 + (70 * 2.0 / 180.0); 
-    uint16_t level = (uint16_t)(duty_cycle * 25000.0 / 20.0); 
+    float duty_cycle9 = 0.5 + (70 * 2.0 / 180.0); 
+    uint16_t level = (uint16_t)(duty_cycle9 * 25000.0 / 20.0); 
     pwm_set_chan_level(pwm_slice_num9, pwm_gpio_to_channel(21), level);
     pwm_set_enabled(pwm_slice_num9,true);
 }
