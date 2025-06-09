@@ -19,6 +19,7 @@ void arm_close();
 void arm_up();
 void arm_down();
 void arm_on();
+void get_ball();
 #ifdef __cplusplus
 }
 #endif

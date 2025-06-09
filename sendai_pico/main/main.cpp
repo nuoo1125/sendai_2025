@@ -17,6 +17,8 @@ int left_photo;
 int right_photo;
 int shiki = 500;
 int stage = 0;
+bool busy = false;
+bool get =false;
 void photo() {
     left_photo = mcp3208_read(5);
     mid_photo = mcp3208_read(6);
@@ -41,8 +43,7 @@ void linetrace() {
         stepper_slow(1, 1);
         sleep_ms(300);
     }
-    else
-        stepper_slow(1, 1);
+    else stepper_slow(1, 1);
 }
 
 int main() {
@@ -66,41 +67,96 @@ int main() {
     gpio_set_function(UART_TX_PIN, GPIO_FUNC_UART);
     gpio_set_function(UART_RX_PIN, GPIO_FUNC_UART);
     stepper_slow(1,1);
-    while (true) {
-        if (uart_is_readable(UART_ID)){
+    stepper_break();
+    arm_up();
+    while(stage<5){
+        photo();
+        linetrace();
+    }
+    if(stage==5){
+        stepper_slow(0,0);
+        sleep_ms(500);
+        stepper_break();
+    }
+    while(stage==5){
+        while(busy == false && uart_is_readable(UART_ID)){
             char c = uart_getc(UART_ID);
             if (c == '\n' || c == '\r') {
                 buffer[index] = '\0';
                 value = atoi(buffer);
                 printf("受信した数値: %d\n", value);
-                value -= 160;
-                if(value > 0){move_to_stepper(read_angle()-value/4);}
-                else move_to_stepper(read_angle()-value/4);
-                stepper_break();
-            if(tof_forward.readRangeSingleMillimeters()<=150){
-                arm_down();
-                sleep_ms(500);
-                arm_open();
-                sleep_ms(1000);
-                stepper_slow(1,1);
-                sleep_ms(350);
-                stepper_break();
-                arm_close();
-                sleep_ms(1000);
-                arm_up();
-                sleep_ms(1000);        
-                arm_on();
-                sleep_ms(1000);
-                arm_down();
-                sleep_ms(3000);
-            }
-            else stepper_slow(1,1);
+                busy = true;
                 index = 0;
-            } else if (index < sizeof(buffer) - 1) {
+                value -= 160;
+                value =value/8.8;
+                move_to_stepper(read_angle()-value);
+                stepper_break();
+                sleep_ms(1000);
+                while(get == false){
+                    if(tof_forward.readRangeSingleMillimeters()<=150){
+                        get_ball();
+                        unlock();
+                        sleep_ms(3*1000);
+                        busy = false;
+                        get = true;
+                    }   
+                    else stepper_slow(1,1);
+                }
+            }
+            else if (index < sizeof(buffer) - 1) {
                 buffer[index++] = c;
+        
             }
         }
-        
-        sleep_ms(10);
+        get = false;
+
     }
 }
+        
+    /*
+    while (true) {
+        while(busy == false && uart_is_readable(UART_ID)){
+            char c = uart_getc(UART_ID);
+            if (c == '\n' || c == '\r') {
+                buffer[index] = '\0';
+                value = atoi(buffer);
+                printf("受信した数値: %d\n", value);
+                busy = true;
+                value -= 160;
+                value =value/10;
+                move_to_stepper(read_angle()-value);
+                stepper_break();
+
+                while(get == false){
+                    if(tof_forward.readRangeSingleMillimeters()<=150){
+                        stepper_break();
+                        arm_down();
+                        sleep_ms(500);
+                        arm_open();
+                        sleep_ms(1000);
+                        stepper_slow(1,1);
+                        sleep_ms(350);
+                        stepper_break();
+                        arm_close();
+                        sleep_ms(1000);
+                        arm_up();
+                        sleep_ms(1000);        
+                        arm_on();
+                        sleep_ms(1000);
+                        arm_down();
+                        sleep_ms(3000);
+                        busy = false;
+                        get = true;
+                    }   
+                    else stepper_slow(1,1);
+                }
+            }
+            else if (index < sizeof(buffer) - 1) {
+                buffer[index++] = c;
+        
+            }
+        }
+        get = false;
+        
+        sleep_ms(10);
+    }*/

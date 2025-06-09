@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
 #include "stepper.h"
 #include "pico/stdlib.h"
 #include "hardware/pwm.h"
@@ -75,23 +76,30 @@ gpio_set_function(7,GPIO_FUNC_PWM);
     sleep_ms(steps*2.08);
     stepper_break();
 }
-void move_to_stepper(int target_angle){
-    gpio_set_function(clock_l, GPIO_FUNC_PWM);
-    gpio_set_function(clock_r,GPIO_FUNC_PWM);
-    target_angle += 720;
-    target_angle %= 360;
-    int16_t angle_diff;
-    bool right;
-    int steps;
+void move_to_stepper(float target_angle){
+    target_angle = fmod((target_angle + 720.0), 360.0);  // 正規化
+
     float current_angle = read_angle();
-    printf("%.2f\n",current_angle);
-    while(abs(current_angle - target_angle) > 1){
-        angle_diff = target_angle - current_angle;      
-        right = angle_diff > 0;
-        steps = abs(angle_diff)/step_angle;
-        stepper_angle(steps,right);
-        current_angle = read_angle();
-        printf("%.2f\n",current_angle);
+    printf("Start angle: %.2f\n", current_angle);
+
+    while (1) {
+        current_angle = fmod((current_angle + 720.0), 360.0); // 正規化
+        float angle_diff = target_angle - current_angle;
+
+        if (angle_diff > 180) angle_diff -= 360;
+        else if (angle_diff < -180) angle_diff += 360;
+
+        if (fabs(angle_diff) < 0.5) break;  // 小さい角度なら無視（調整）
+
+        bool right = angle_diff > 0;
+        int steps = round(fabs(angle_diff) / step_angle);  // ここで四捨五入が重要
+
+        if (steps == 0) break;  // もう動く必要なし
+
+        stepper_angle(steps, right);
         stepper_break();
+
+        current_angle = read_angle();
+        printf("Current angle: %.2f\n", current_angle);
     }
 }

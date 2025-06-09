@@ -14,7 +14,7 @@ extern "C" {
 void stepper_setup();
 void stepper_slow(bool forward_l,bool forward_r);
 void stepper_angle(int steps,bool right);
-void move_to_stepper(int target_angle);
+void move_to_stepper(float target_angle);
 void stepper_break();
 #ifdef __cplusplus
 }

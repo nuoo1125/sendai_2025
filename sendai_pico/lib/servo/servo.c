@@ -158,3 +158,21 @@ void s35_up(){
     pwm_set_chan_level(pwm_slice_num4, pwm_gpio_to_channel(gpio4),1000);
     pwm_set_enabled(pwm_slice_num4,true);
 }
+void get_ball(){
+    stepper_break();
+    arm_down();
+    sleep_ms(500);
+    arm_open();
+    sleep_ms(1000);
+    stepper_slow(1,1);
+    sleep_ms(350);
+    stepper_break();
+    arm_close();
+    sleep_ms(1000);
+    arm_up();
+    sleep_ms(1000);        
+    arm_on();
+    sleep_ms(1000);
+    arm_down();
+    sleep_ms(3000);
+}
