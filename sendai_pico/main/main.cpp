@@ -96,7 +96,7 @@ int main() {
                 stepper_break();
                 sleep_ms(1000);
                 while(get == false){
-                    if(tof_forward.readRangeSingleMillimeters()<=150){
+                    if(tof_forward.readRangeSingleMillimeters()<=150 || tof_backward.readRangeSingleMillimeters()<=150){
                         get_ball();
                         sleep_ms(3*1000);
                         move_to_stepper(home_position+90);
@@ -139,51 +139,3 @@ int main() {
         get = false;
     }
 }
-        
-    /*
-    while (true) {
-        while(busy == false && uart_is_readable(UART_ID)){
-            char c = uart_getc(UART_ID);
-            if (c == '\n' || c == '\r') {
-                buffer[index] = '\0';
-                value = atoi(buffer);
-                printf("受信した数値: %d\n", value);
-                busy = true;
-                value -= 160;
-                value =value/10;
-                move_to_stepper(read_angle()-value);
-                stepper_break();
-
-                while(get == false){
-                    if(tof_forward.readRangeSingleMillimeters()<=150){
-                        stepper_break();
-                        arm_down();
-                        sleep_ms(500);
-                        arm_open();
-                        sleep_ms(1000);
-                        stepper_slow(1,1);
-                        sleep_ms(350);
-                        stepper_break();
-                        arm_close();
-                        sleep_ms(1000);
-                        arm_up();
-                        sleep_ms(1000);        
-                        arm_on();
-                        sleep_ms(1000);
-                        arm_down();
-                        sleep_ms(3000);
-                        busy = false;
-                        get = true;
-                    }   
-                    else stepper_slow(1,1);
-                }
-            }
-            else if (index < sizeof(buffer) - 1) {
-                buffer[index++] = c;
-        
-            }
-        }
-        get = false;
-        
-        sleep_ms(10);
-    }*/

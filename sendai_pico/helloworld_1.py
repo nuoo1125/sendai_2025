@@ -27,16 +27,30 @@ STABLE_FRAMES = 20
 while True:
     img = sensor.snapshot()
     blobs_red = img.find_blobs([red_threshold], pixels_threshold=200, area_threshold=200, merge=True)
-
-    # 面積最大の赤ブロブを選ぶ
     largest_blob = None
     max_area = 0
+    largest_color = ""
     for blob in blobs_red:
         if 0.8 < blob.w() / blob.h() < 1.2:
             area = blob.pixels()
-            if area > max_area:
+            if area >= max_area:
                 largest_blob = blob
                 max_area = area
+                largest_color = "R"
+    for blob in blobs_yellow:
+        if 0.8 < blob.w() / blob.h() < 1.2:
+            area = blob.pixels()
+            if area >= max_area:
+                largest_blob = blob
+                max_area = area
+                largest_color = "Y"
+    for blob in blobs_blue:
+        if 0.8 < blob.w() / blob.h() < 1.2:
+            area = blob.pixels()
+            if area >= max_area:
+                largest_blob = blob
+                max_area = area
+                largest_color = "B"
     if largest_blob:
         img.draw_circle(largest_blob.cx(), largest_blob.cy(), largest_blob.w() // 2, color=(255, 0, 0))
         if prev_cx_r is not None and abs(largest_blob.cx() - prev_cx_r) <= STABLE_THRESHOLD:
@@ -44,10 +58,9 @@ while True:
         else:
             stable_count = 0
         prev_cx_r = largest_blob.cx()
-
         if stable_count >= STABLE_FRAMES:
-            print("SEND:", largest_blob.cx())
-            uart2.write(str(largest_blob.cx()) + "\n")
+            print("SEND:",largest_color + ":" + largest_blob.cx())
+            uart2.write(largest_color + ":" + str(largest_blob.cx()) + "\n")
             stable_count = 0
-
     lcd.display(img)
+
