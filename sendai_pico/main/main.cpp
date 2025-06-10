@@ -95,7 +95,6 @@ int main() {
                 while(get == false){
                     if(tof_forward.readRangeSingleMillimeters()<=150){
                         get_ball();
-                        unlock();
                         sleep_ms(3*1000);
                         busy = false;
                         get = true;

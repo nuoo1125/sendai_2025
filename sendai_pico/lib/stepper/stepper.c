@@ -83,18 +83,18 @@ void move_to_stepper(float target_angle){
     printf("Start angle: %.2f\n", current_angle);
 
     while (1) {
-        current_angle = fmod((current_angle + 720.0), 360.0); // 正規化
+        current_angle = fmod((current_angle + 720.0), 360.0);
         float angle_diff = target_angle - current_angle;
 
         if (angle_diff > 180) angle_diff -= 360;
         else if (angle_diff < -180) angle_diff += 360;
 
-        if (fabs(angle_diff) < 0.5) break;  // 小さい角度なら無視（調整）
+        if (fabs(angle_diff) < 0.5) break;
 
         bool right = angle_diff > 0;
-        int steps = round(fabs(angle_diff) / step_angle);  // ここで四捨五入が重要
+        int steps = round(fabs(angle_diff) / step_angle); 
 
-        if (steps == 0) break;  // もう動く必要なし
+        if (steps == 0) break; 
 
         stepper_angle(steps, right);
         stepper_break();
