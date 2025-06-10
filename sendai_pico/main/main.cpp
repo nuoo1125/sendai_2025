@@ -12,11 +12,13 @@
 #include "servo/servo.h"
 #include "stepper/stepper.h"
 #include "interface/interface.h"
-int mid_photo;
-int left_photo;
-int right_photo;
+int mid_photo = 0;
+int left_photo = 0;
+int right_photo = 0;
 int shiki = 500;
 int stage = 0;
+int home_position = 0;
+int ball_color = 0; //red 1 yellow 2 blue 3
 bool busy = false;
 bool get =false;
 void photo() {
@@ -89,6 +91,7 @@ int main() {
                 index = 0;
                 value -= 160;
                 value =value/8.8;
+                home_position = read_angle();
                 move_to_stepper(read_angle()-value);
                 stepper_break();
                 sleep_ms(1000);
@@ -96,6 +99,32 @@ int main() {
                     if(tof_forward.readRangeSingleMillimeters()<=150){
                         get_ball();
                         sleep_ms(3*1000);
+                        move_to_stepper(home_position+90);
+                        while(1){
+                            photo();
+                            if(mid_photo < shiki && left_photo < shiki && right_photo < shiki){
+                                stepper_break();
+                                move_to_stepper(read_angle()-90);
+                                while(1){
+                                    photo();
+                                    if(mid_photo < shiki && left_photo < shiki && right_photo < shiki){
+                                        stepper_break();
+                                        move_to_stepper(read_angle()-90);
+                                        break;
+                                    }
+                                    else stepper_slow(0,0);
+                                }
+                                break;
+                            }
+                            else stepper_slow(0,0);
+                        }
+                        //色に合わせて角度をつける
+                        unlock();
+                        //戻る
+                        //if(stage == 5)まで戻る
+                        stepper_slow(0,0);
+                        sleep_ms(500);
+                        stepper_break();
                         busy = false;
                         get = true;
                     }   
@@ -108,7 +137,6 @@ int main() {
             }
         }
         get = false;
-
     }
 }
         
