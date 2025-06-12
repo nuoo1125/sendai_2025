@@ -52,6 +52,6 @@ int16_t read_angle() {
     uint8_t buffer[6];
     i2c_write_blocking(gyro_i2c, ADDRESS, (uint8_t[]){EULER_REGISTER}, 1, true); 
     i2c_read_blocking(gyro_i2c, ADDRESS, buffer, 6, false); 
-    printf("%.2f\n", merge(buffer[0], buffer[1])/16.0);
+   // printf("%.2f\n", merge(buffer[0], buffer[1])/16.0);
     return merge(buffer[0], buffer[1])/16.0;
 }

@@ -16,7 +16,7 @@ int mid_photo = 0;
 int left_photo = 0;
 int right_photo = 0;
 int shiki = 500;
-int stage = 0;
+int stage = 5;
 int home_position = 0;
 int ball_color = 0; //red 1 yellow 2 blue 3
 bool busy = false;
@@ -75,11 +75,6 @@ int main() {
         photo();
         linetrace();
     }
-    if(stage==5){
-        stepper_slow(0,0);
-        sleep_ms(500);
-        stepper_break();
-    }
     while(stage==5){
         while(busy == false && uart_is_readable(UART_ID)){
             char c = uart_getc(UART_ID);
@@ -87,29 +82,30 @@ int main() {
                 buffer[index] = '\0';
                 value = atoi(buffer);
                 printf("受信した数値: %d\n", value);
-                busy = true;
                 index = 0;
-                value -= 160;
+            }
+/*                value -= 160;
                 value =value/8.8;
                 home_position = read_angle();
                 move_to_stepper(read_angle()-value);
-                stepper_break();
-                sleep_ms(1000);
                 while(get == false){
-                    if(tof_forward.readRangeSingleMillimeters()<=150 || tof_backward.readRangeSingleMillimeters()<=150){
+                    if((tof_forward.readRangeSingleMillimeters()<=150)){
                         get_ball();
                         sleep_ms(3*1000);
                         move_to_stepper(home_position+90);
+                        sleep_ms(1000);
                         while(1){
                             photo();
                             if(mid_photo < shiki && left_photo < shiki && right_photo < shiki){
                                 stepper_break();
+                                sleep_ms(1000);
                                 move_to_stepper(read_angle()-90);
                                 while(1){
                                     photo();
                                     if(mid_photo < shiki && left_photo < shiki && right_photo < shiki){
                                         stepper_break();
                                         move_to_stepper(read_angle()-90);
+                                        sleep_ms(1000);
                                         break;
                                     }
                                     else stepper_slow(0,0);
@@ -119,18 +115,14 @@ int main() {
                             else stepper_slow(0,0);
                         }
                         //色に合わせて角度をつける
-                        unlock();
                         //戻る
                         //if(stage == 5)まで戻る
-                        stepper_slow(0,0);
-                        sleep_ms(500);
-                        stepper_break();
                         busy = false;
-                        get = true;
                     }   
                     else stepper_slow(1,1);
                 }
             }
+                */
             else if (index < sizeof(buffer) - 1) {
                 buffer[index++] = c;
         

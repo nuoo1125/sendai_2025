@@ -65,7 +65,7 @@
 1698	2194	7687353885206456	lib/stepper/CMakeFiles/stepper.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj	725c3e1b9f0cbe73
 1047	2281	7687353886056267	lib/stepper/CMakeFiles/stepper.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_util/pheap.c.obj	a5bafe8e794b4a6e
 1491	2439	7687353887956508	lib/stepper/CMakeFiles/stepper.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj	e2be670ad476e565
-40	321	7711629767566976	lib/stepper/CMakeFiles/stepper.dir/stepper.c.obj	cc4a2b8916bab2d7
+152	599	7713354420444334	lib/stepper/CMakeFiles/stepper.dir/stepper.c.obj	cc4a2b8916bab2d7
 17716	18500	7687354048241498	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj	73ffc1dc134e6e71
 3749	4547	7687353908696748	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj	b8494038ae41db99
 2897	3748	7687353900596641	lib/stepper/CMakeFiles/stepper.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_adc/adc.c.obj	a2af0a321fe1207d
@@ -95,7 +95,7 @@
 271	854	7703777010060914	lib/interface/CMakeFiles/interface.dir/interface.c.obj	3aee5cdd36c9c1ab
 3216	3995	7687353903224105	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_platform/platform.c.obj	80c2828a4ce4657f
 3058	4074	7687353904260301	lib/stepper/CMakeFiles/stepper.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj	f2b09d5ba444861f
-116	1577	7711649556709238	main/CMakeFiles/sendai_pico.dir/main.cpp.obj	5111007149f32326
+96	1400	7713543381627515	main/CMakeFiles/sendai_pico.dir/main.cpp.obj	5111007149f32326
 3307	4216	7687353904733097	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj	c970e1b8ddb9c05b
 14846	15874	7687354022426074	lib/servo/CMakeFiles/servo.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj	ebc50f87980586e
 2515	4229	7687353906397779	lib/stepper/CMakeFiles/stepper.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_float/float_math.c.obj	db5ef2836c9f983d
@@ -122,7 +122,7 @@
 4216	5345	7687353916357874	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj	879dc0a1d7d90081
 4981	5360	7687353917033568	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj	21a4958018f09620
 16520	17049	7687354033724179	lib/servo/CMakeFiles/servo.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_divider/divider.S.obj	18b38bbcb7f3896a
-321	882	7711629773149419	lib/stepper/libstepper.a	d3bdc7eca0b37a53
+599	794	7713354422404852	lib/stepper/libstepper.a	d3bdc7eca0b37a53
 17998	18779	7687354051404668	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_sync/lock_core.c.obj	9a27004e82ee712e
 4739	5453	7687353917969901	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj	132bbf3031319efd
 5106	5581	7687353919567898	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_divider/divider.S.obj	4cac2974c6604f06
@@ -159,7 +159,7 @@
 6166	7183	7687353935661852	lib/gyro/CMakeFiles/gyro.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj	61ebbfcdf1d6cb11
 21146	21797	7687354081950558	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/class/net/ecm_rndis_device.c.obj	b785c658e5daa3a5
 6112	7228	7687353936060565	lib/gyro/CMakeFiles/gyro.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj	23f55addc93c99c2
-157	580	7709729397511560	lib/gyro/CMakeFiles/gyro.dir/gyro.c.obj	78e16694aa719097
+163	551	7713354419963195	lib/gyro/CMakeFiles/gyro.dir/gyro.c.obj	78e16694aa719097
 6379	7258	7687353935433098	lib/gyro/CMakeFiles/gyro.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj	81adc564ed0418e
 6023	7310	7687353936565215	lib/interface/CMakeFiles/interface.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj	171e3e32648c332b
 16554	17224	7687354035869789	lib/servo/CMakeFiles/servo.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj	6a07571d908a7d5c
@@ -174,7 +174,7 @@
 19772	20608	7687354069857814	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj	70c205174d1a1d31
 7259	8091	7687353944676117	lib/gyro/CMakeFiles/gyro.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj	4c71293498ea3e64
 7183	8110	7687353944784364	lib/gyro/CMakeFiles/gyro.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_util/datetime.c.obj	da7abb2c529ba3a
-582	1586	7709729407564134	lib/gyro/libgyro.a	766356656e5fa394
+552	1450	7713354428990397	lib/gyro/libgyro.a	766356656e5fa394
 7246	8157	7687353945261670	lib/gyro/CMakeFiles/gyro.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/common/pico_util/queue.c.obj	13297bf41f06c02
 16537	16936	7687354033140592	lib/servo/CMakeFiles/servo.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj	d1eeb6313b967015
 7387	8199	7687353945807404	lib/gyro/CMakeFiles/gyro.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj	75ca96497fcf571e
@@ -374,4 +374,8 @@
 21644	22374	7687354087914568	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_spi/spi.c.obj	ef28b3ea90e0ef56
 21559	22474	7687354088925409	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/lib/tinyusb/src/tusb.c.obj	978671ffcafd2461
 21722	22540	7687354089603382	main/CMakeFiles/sendai_pico.dir/C_/Program_Files/Raspberry_Pi/Pico_SDK_v1.5.1/pico-sdk/src/rp2_common/hardware_pio/pio.c.obj	37dbe409b115d330
-1578	3268	7711649564678901	main/sendai_pico.elf	93c0917e05779eef
+1401	3163	7713543390449935	main/sendai_pico.elf	93c0917e05779eef
+89	1686	7714252123728682	main/CMakeFiles/sendai_pico.dir/main.cpp.obj	5111007149f32326
+1688	5536	7714252151544311	main/sendai_pico.elf	93c0917e05779eef
+128	1401	7714252658274427	main/CMakeFiles/sendai_pico.dir/main.cpp.obj	5111007149f32326
+1402	3122	7714252667022358	main/sendai_pico.elf	93c0917e05779eef

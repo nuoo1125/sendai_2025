@@ -59,8 +59,8 @@ void stepper_break(){
     pwm_set_enabled(slice_num_r, false);
 }
 void stepper_angle(int steps,bool right){
-gpio_set_function(5, GPIO_FUNC_PWM);
-gpio_set_function(7,GPIO_FUNC_PWM);
+    gpio_set_function(5, GPIO_FUNC_PWM);
+    gpio_set_function(7,GPIO_FUNC_PWM);
     if(right){
         gpio_put(direction_l,1);
         gpio_put(direction_r,1);
@@ -80,7 +80,7 @@ void move_to_stepper(float target_angle){
     target_angle = fmod((target_angle + 720.0), 360.0);  // 正規化
 
     float current_angle = read_angle();
-    printf("Start angle: %.2f\n", current_angle);
+//    printf("Start angle: %.2f\n", current_angle);
 
     while (1) {
         current_angle = fmod((current_angle + 720.0), 360.0);
@@ -100,6 +100,6 @@ void move_to_stepper(float target_angle){
         stepper_break();
 
         current_angle = read_angle();
-        printf("Current angle: %.2f\n", current_angle);
+      //  printf("Current angle: %.2f\n", current_angle);
     }
 }

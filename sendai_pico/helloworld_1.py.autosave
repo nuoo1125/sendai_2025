@@ -1,0 +1,38 @@
+import sensor, image, lcd
+from machine import UART
+from fpioa_manager import fm
+
+fm.register(34, fm.fpioa.UART2_TX)
+fm.register(35, fm.fpioa.UART2_RX)
+uart2 = UART(UART.UART2, 115200)
+
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.set_auto_gain(False)
+sensor.set_auto_whitebal(False)
+sensor.set_vflip(True)
+sensor.set_hmirror(True)
+lcd.init()
+sensor.skip_frames(time=2000)
+blue_threshold = (0, 100, -86, 22, -8, 24)
+red_threshold = (0, 54, 19, 65, -49, 127)
+yellow_threshold = (0, 83, -31, -2, 57, 127)
+
+prev_cx_r = None
+stable_count = 0
+STABLE_THRESHOLD = 5
+STABLE_FRAMES = 10
+
+while True:
+    img = sensor.snapshot()
+    blobs_red = img.find_blobs([red_threshold], pixels_threshold=200, area_threshold=200, merge=True)
+    blobs_yellow =img.find_blobs([yellow_threshold], pixels_threshold=200, area_threshold=200, merge=True)
+    blobs_blue = img.find_blobs([blue_threshold], pixels_threshold=200, area_threshold=200, merge=True)
+    largest_blob = None
+    max_area = 0
+    largest_color = ""
+    print("SEND:",str(largest_color) + ":" + str(200))
+    uart2.write(str(200) + "\n")
+    stable_count = 0
+    lcd.display(img)
